@@ -1,0 +1,288 @@
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Traceback (most recent call last):
+  File "main_rlmsoftmax.py", line 476, in <module>
+    train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D, G_optimizer, D_optimizer, epoch)
+  File "main_rlmsoftmax.py", line 320, in train
+    assert not (np.isnan(loss.item()) or loss.item() > 1e5), 'Loss explosion: {}'.format(loss.item())
+AssertionError: Loss explosion: 424591.0625
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Traceback (most recent call last):
+  File "main_rlmsoftmax.py", line 473, in <module>
+    train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D, G_optimizer, D_optimizer, epoch)
+  File "main_rlmsoftmax.py", line 318, in train
+    assert not (np.isnan(loss.item()) or loss.item() > 1e5), 'Loss explosion: {}'.format(loss.item())
+AssertionError: Loss explosion: 146946.578125
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Traceback (most recent call last):
+  File "main_rlmsoftmax.py", line 473, in <module>
+    train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D, G_optimizer, D_optimizer, epoch)
+  File "main_rlmsoftmax.py", line 318, in train
+    assert not (np.isnan(loss.item()) or loss.item() > 1e5), 'Loss explosion: {}'.format(loss.item())
+AssertionError: Loss explosion: 846918.25
+single_gpu_rlmsoftmax.sh: line 1: python: command not found
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Traceback (most recent call last):
+  File "main_rlmsoftmax.py", line 473, in <module>
+    train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D, G_optimizer, D_optimizer, epoch)
+  File "main_rlmsoftmax.py", line 318, in train
+    assert not (np.isnan(loss.item()) or loss.item() > 1e5), 'Loss explosion: {}'.format(loss.item())
+AssertionError: Loss explosion: 132238.625
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Traceback (most recent call last):
+  File "main_rlmsoftmax.py", line 472, in <module>
+    train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D, G_optimizer, D_optimizer, epoch)
+  File "main_rlmsoftmax.py", line 317, in train
+    assert not (np.isnan(loss.item()) or loss.item() > 1e5), 'Loss explosion: {}'.format(loss.item())
+AssertionError: Loss explosion: 205476.109375
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Traceback (most recent call last):
+  File "main_rlmsoftmax.py", line 472, in <module>
+    train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D, G_optimizer, D_optimizer, epoch)
+  File "main_rlmsoftmax.py", line 317, in train
+    assert not (np.isnan(loss.item()) or loss.item() > 1e5), 'Loss explosion: {}'.format(loss.item())
+AssertionError: Loss explosion: 3743883.0
+single_gpu_rlmsoftmax.sh: line 1: python: command not found
+Terminated
+Terminated
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Traceback (most recent call last):
+  File "main_rlmsoftmax.py", line 446, in <module>
+    args)
+  File "main_rlmsoftmax.py", line 78, in create_data_loaders
+    with open(args.labels) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'data-local/labels/cifar10/1000_balanced_labels/5.txt'
+Terminated
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+Traceback (most recent call last):
+  File "main_rlmsoftmax.py", line 434, in <module>
+    LOG.info("Start training at {}".format(date_time_now))
+NameError: name 'date_time_now' is not defined
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Terminated
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+python: can't open file 'multiple_rlmsoftmax.py': [Errno 2] No such file or directory
+python: can't open file 'multiple_rlmsoftmax.py': [Errno 2] No such file or directory
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+/home/student02/anaconda3/envs/rmcosssl/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+num of labeled: 4000
+
+num of unlabeled: 46000
+

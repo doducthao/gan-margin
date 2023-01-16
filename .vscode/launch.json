@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--dataset",
+                "cifar10",
+                "--train-subdir",
+                "train+val",
+                "--eval-subdir",
+                "test",
+                "--batch-size",
+                "128",
+                "--labeled-batch-size",
+                "31",
+                "--arch",
+                "cifar_shakeshake26",
+                "--consistency-type",
+                "mse",
+                "--consistency-rampup",
+                "5",
+                "--consistency",
+                "100.0",
+                "--logit-distance-cost",
+                "0.01",
+                "--weight-decay",
+                "2e-4",
+                "--lr-rampup",
+                "0",
+                "--lr",
+                "0.05",
+                "--nesterov",
+                "True",
+                "--labels",
+                "./data-local/labels/cifar10/1000_balanced_labels/00.txt",
+                "--epochs",
+                "3",
+                "--lr-rampdown-epochs",
+                "210",
+                "--ema-decay",
+                "0.97",
+                "--generated-batch-size",
+                "32",
+                "--resume",
+                "",
+                "--mode",
+                "rlmsoftmax",
+                "--m",
+                "0.2",
+                "--s",
+                "10"
+            ]
+        }
+    ]
+}
