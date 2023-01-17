@@ -2,7 +2,7 @@ from cProfile import label
 from dataloader import dataloader, dataloader_given_indexes
 from net import generator, discriminator, classifier, initialize_weights
 from utils import print_network, save_images, generate_animation, train_loss_plot, test_loss_plot, acc_plot
-from loss import clf_loss, inverted_cross_entropy, d_loss, g_loss, d_loss_rlmsoftmax, g_loss_rlmsoftmax
+from losses import clf_loss, inverted_cross_entropy, d_loss_cosine_margin, g_loss_cosine_margin, d_loss_multi_angular_2k, g_loss_multi_angular_2k, g_loss_additive_angular_arccos, d_loss_additive_angular_arccos
 from parser import create_parser 
 import torch
 import torch.nn.functional as F
@@ -102,9 +102,14 @@ if __name__ == '__main__':
         date_time_now = datetime.now()
         date_time_now = "{:%Y-%m-%d_%H:%M:%S}".format(date_time_now)
         if args.mode == "rmcos":
-            checkpoint_path = os.path.join("out_rmcos", args.dataset, str(args.num_labeled), str(args.alpha), date_time_now)
-        elif args.mode == "rlmsoftmax":
-            checkpoint_path = os.path.join("out_rlmsoftmax", args.dataset, str(args.num_labeled), str(args.alpha), date_time_now)
+            checkpoint_path = os.path.join("out_rmcos", args.dataset, str(args.num_labeled), str(args.alpha),
+                                           date_time_now)
+        elif args.mode == "rmlsoftmax":
+            checkpoint_path = os.path.join("out_rmlsoftmax", args.dataset, str(args.num_labeled), str(args.alpha),
+                                           date_time_now)
+        elif args.mode == "rmarc":
+            checkpoint_path = os.path.join("out_rmarc", args.dataset, str(args.num_labeled), str(args.alpha),
+                                           date_time_now)
 
     generated_images_dir = os.path.join(checkpoint_path, args.generated_images_dir)
     labeled_indexes_file = os.path.join(checkpoint_path, args.labeled_indexes_dir + '.txt')
@@ -327,10 +332,12 @@ if __name__ == '__main__':
             G_ = G(z_)
             D_fake = D(G_)
             if args.mode == "rmcos":
-                D_loss = d_loss(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
-            elif args.mode == "rlmsoftmax":
-                D_loss = d_loss_rlmsoftmax(D_real, D_fake, torch.ones_like(D_real))
-                
+                D_loss = d_loss_cosine_margin(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
+            elif args.mode == "rmlsoftmax":
+                D_loss = d_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
+            elif  args.mode == "rmarc":
+                D_loss = d_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
+
             train_hist['D_loss'].append(D_loss.item())
             D_loss.backward()
             D_optimizer.step()
@@ -347,9 +354,11 @@ if __name__ == '__main__':
             D_real = (D_labeled + D_unlabeled)/2
 
             if args.mode == "rmcos":
-                G_loss_D = g_loss(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
-            elif args.mode == "rlmsoftmax":
-                G_loss_D = g_loss_rlmsoftmax(D_real, D_fake, torch.ones_like(D_fake))
+                G_loss_D = g_loss_cosine_margin(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
+            elif args.mode == "rmlsoftmax":
+                G_loss_D = g_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
+            elif args.mode == "rmarc":
+                G_loss_D = g_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
 
             _, C_fake_pred = C(G_)
             C_fake_true = torch.argmax(C_fake_pred, dim=1) # (vals, indices)
