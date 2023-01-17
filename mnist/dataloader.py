@@ -81,7 +81,7 @@ def dataloader_given_indexes(args):
         with open(args.labeled_indexes, mode='r', encoding='utf-8') as f:
             labeled_indexes = f.readlines()
             
-        labeled_indexes = [int(re.sub('\n', '', i)) for i in labeled_indexes]
+        labeled_indexes = [int(re.sub('\n', '', i).split(",")[0]) for i in labeled_indexes]
         unlabeled_indexes = [i for i in indexes if (not i in labeled_indexes)]
 
         labeled_set = get_dataset(labeled_indexes, training_set)
