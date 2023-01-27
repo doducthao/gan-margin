@@ -53,10 +53,12 @@ def find_k(cos_theta, m):
     return k
 
 def d_loss_multi_angular_2k(real, fake, y, m=4, s = 10.0):
+    m = int(m)
     real = calculate_phi_theta(real, m)
     return BCEloss(s * (real - torch.mean(fake)) + 1e-6, y)
 
 def g_loss_multi_angular_2k(real, fake, y, m=4, s = 10.0):
+    m = int(m)
     fake = calculate_phi_theta(fake, m)
     return BCEloss(s * (fake - torch.mean(real)) + 1e-6, y)
 
