@@ -98,30 +98,62 @@ def dataloader_given_indexes(args):
     
     return labeled_loader, unlabeled_loader, test_loader, labeled_indexes
 
-def create_labeled_indexes_mnist():
+def create_num_random_labels(num):
+    while True:
+        ratios = []
+        num_random_labels = []
+        for i in range(9):
+            ratio = 0
+            while ratio < 0.02 or ratio > 0.2:
+                ratio = np.random.uniform(0,1,1)
+            n_labels = int(num * ratio)
+            ratios.append(ratio)
+            num_random_labels.append(n_labels)
+        total_9_labels = sum(num_random_labels)
+        n_labels_last = num - total_9_labels
+        ratio_last = n_labels_last / num 
+        ratios.append(ratio)
+        if ratio_last <= 0.2 and ratio_last >= 0.01:
+            num_random_labels.append(n_labels_last)
+            return num_random_labels    
+
+def create_labeled_indexes_mnist(random_seed=10, uniform=True):
     training_set = datasets.MNIST('data/mnist', train=True, download=True)
     indexes = np.arange(len(training_set))
-    num_labels = [50, 100, 600, 1000, 3000]
+    np.random.seed(random_seed)
+
+    if uniform:
+        num_labels = [50, 100, 600, 1000, 3000]
+        dir_name = 'uniform_labeled'
+    else:
+        num_labels = [600, 1000, 3000]
+        dir_name = 'non_uniform_labeled'
+
     for num in num_labels:
-        for stt in range(5):
+        for stt in range(20):
             indexes = np.arange(len(training_set))
             np.random.shuffle(indexes)
 
             mask = np.zeros(shape=indexes.shape, dtype=np.bool)
             labels = np.array([training_set[i][1] for i in indexes], dtype = np.int64)
 
-            for i in range(10):
-                mask[np.where(labels == i)[0][: num // 10]] = True # choosen labeled data
+            if uniform:
+                for i in range(10):
+                    mask[np.where(labels == i)[0][: num // 10]] = True # choosen labeled data
+            else:
+                num_random_labels = create_num_random_labels(num=num)
+                for i in range(10):
+                    mask[np.where(labels == i)[0][:num_random_labels[i]]] = True # choosen labeled data
         
             labeled_indexes = list(indexes[mask])
             labeled_indexes = sorted(labeled_indexes, reverse=False)
             labels = [training_set[i][1] for i in labeled_indexes]
 
-            os.makedirs(f'labeled/{num}', exist_ok=True)
-            with open(f'labeled/{num}/{stt}.txt', mode='w', encoding='utf-8') as f:
+            os.makedirs(f'{dir_name}/{num}', exist_ok=True)
+            with open(f'{dir_name}/{num}/{stt}.txt', mode='w', encoding='utf-8') as f:
                 for (index, label) in zip(labeled_indexes, labels):
-                    f.write(str(index) + ',' + str(label)+'\n')
-            with open(f'labeled/{num}/{stt}_desc.txt', mode='w', encoding='utf-8') as f:
+                    f.write(str(index) + ',' + str(label)+'\n')                
+            with open(f'{dir_name}/{num}/{stt}_desc.txt', mode='w', encoding='utf-8') as f:
                 for i in range(10):
                     f.write(str(i) + ':' + str(labels.count(i))+'\n')
 
@@ -132,7 +164,6 @@ def test_img():
     indexes = np.arange(len(training_set))
     np.random.shuffle(indexes)
     labels = np.array([training_set[i][1] for i in indexes], dtype = np.int64)
-
     img = plt.imshow(training_set[16042][0])
     print(training_set[16042][1])
     plt.savefig("test.png")
@@ -141,5 +172,6 @@ def test_img():
 
 
 if __name__ == "__main__":
-    # create_labeled_indexes_mnist()
-    test_img()
+    create_labeled_indexes_mnist(uniform=True)
+    create_labeled_indexes_mnist(uniform=False)
+    # test_img()
