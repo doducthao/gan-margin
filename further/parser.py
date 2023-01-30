@@ -2,7 +2,7 @@ import argparse
 from email.policy import default
 
 def create_parser():
-    parser = argparse.ArgumentParser(description='RMCOS-SSL & RLMSOFTMAX-SSL')
+    parser = argparse.ArgumentParser(description='RMCOS-SSL & RMLSOFTMAX-SSL & RMARC_SSL')
     parser.add_argument('--dataset', default='cifar10'),
     parser.add_argument('--train-subdir', type=str, default='train+val')
     parser.add_argument('--eval-subdir', type=str, default='test')
