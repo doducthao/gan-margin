@@ -213,13 +213,13 @@ if __name__ == '__main__':
                 if args.num_labeled == 50:
                     gate = 0.6
                 elif args.num_labeled == 100:
-                    gate = 0.8
+                    gate = 0.78
                 elif args.num_labeled == 600:
-                    gate = 0.93
+                    gate = 0.9
                 elif args.num_labeled == 1000:
-                    gate = 0.95
+                    gate = 0.93
                 elif args.num_labeled == 3000:
-                    gate = 0.97
+                    gate = 0.95
 
                 LOG.info(f'Training C to archieve at least {gate} accuracy')
                 correct_rate = 0

@@ -14,11 +14,11 @@ def nll_loss_neg(y_pred, y_true):  # # #
 def inverted_cross_entropy(y_pred, y_true):
     out = - torch.mean(y_true * torch.log(1-y_pred + 1e-6) + 1e-6)
     return out
-
+# rmcos
 def d_loss_cosine_margin(real, fake, y, m=0.15, s=10.0):
     real = real - m
     return BCEloss(s*(real - fake) + 1e-6 , y)
-
+# rmcos
 def g_loss_cosine_margin(real, fake, y, m=0.15, s=10.0):
     fake = fake + m
     return BCEloss(s*(fake - real) + 1e-6, y)
@@ -52,23 +52,24 @@ def find_k(cos_theta, m):
     k = (theta / divisor).floor().detach()
     return k
 
+# rmlsoftmax
 def d_loss_multi_angular_2k(real, fake, y, m=4, s = 10.0):
     m = int(m)
     real = calculate_phi_theta(real, m)
     return BCEloss(s * (real - torch.mean(fake)) + 1e-6, y)
-
+# rmlsoftmax
 def g_loss_multi_angular_2k(real, fake, y, m=4, s = 10.0):
     m = int(m)
     fake = calculate_phi_theta(fake, m)
     return BCEloss(s * (fake - torch.mean(real)) + 1e-6, y)
-
-def d_loss_additive_angular_arccos(real, fake, y, m=1.35, s = 10.0):
+# rmarc
+def d_loss_additive_angular_arccos(real, fake, y, m=2.35, s = 10.0):
     real.arccos_()
     real = real + m
     real.cos_()
     return BCEloss(s * (real - torch.mean(fake)) + 1e-6, y)
-
-def g_loss_additive_angular_arccos(real, fake, y, m=1.35, s = 10.0):
+# rmarc
+def g_loss_additive_angular_arccos(real, fake, y, m=2.35, s = 10.0):
     fake.arccos_()
     fake = fake + m
     fake.cos_()
