@@ -6,5 +6,6 @@ further/data-local/images
 further/data-local/workdir
 further/out_rmcos
 further/out_rlmsoftmax
+further/out_rmarc
 **/__pycache__/**
 *.pyc
