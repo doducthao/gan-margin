@@ -17,7 +17,7 @@ from dataloader import NO_LABEL, relabel_dataset, TwoStreamBatchSampler
 import networks
 from networks import generator, discriminator
 from mnist.losses import *
-from losses import (BCEloss, inverted_cross_entropy,softmax_mse_loss, softmax_kl_loss, symmetric_mse_loss)
+from losses import softmax_mse_loss, softmax_kl_loss, symmetric_mse_loss
 
 from utils import AverageMeterSet, assert_exactly_one, save_images
 
