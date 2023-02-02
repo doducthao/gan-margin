@@ -9,7 +9,6 @@ def create_parser():
     parser.add_argument('--device', type=str, default='cuda')
 
     # save results
-    parser.add_argument('--labeled_indexes_dir', type=str, default='labeled_indexes')
     parser.add_argument('--acc_time', type=str, default='acc_time')
     parser.add_argument('--generated_images_dir', type=str, default='generated_images')
 
@@ -25,6 +24,7 @@ def create_parser():
     parser.add_argument('--momentum', type=str, default=0.5)
     parser.add_argument('--beta1', type=float, default=0.5)
     parser.add_argument('--beta2', type=float, default=0.999)
+    parser.add_argument('--scheduler', type=bool, default=False)
     
     # parser.add_argument('--initial-lrC', default=0.0, type=float)
     # parser.add_argument('--lrC-rampup', default=0, type=int)
@@ -34,9 +34,7 @@ def create_parser():
     parser.add_argument('--s', type=float, default=10.0)
 
     parser.add_argument('--index', type=int, default=1)
-    parser.add_argument('--num_epoch', type=int, default=50)
-    parser.add_argument('--change_nlabels', type=bool, default=False)
-    parser.add_argument('--change_alpha', type=bool, default=False)
+    parser.add_argument('--num_epoch', type=int, default=40)
     parser.add_argument('--num_labeled', type=int, default=100)
     parser.add_argument('--alpha', type=float, default=0.9)
     

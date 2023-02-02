@@ -1,8 +1,9 @@
 from cProfile import label
-from dataloader import dataloader, dataloader_given_indexes
+from dataloader import dataloader_given_indexes
 from net import generator, discriminator, classifier, initialize_weights
-from utils import print_network, save_images, generate_animation, train_loss_plot, test_loss_plot, acc_plot
+from utils import save_images, generate_animation, train_loss_plot, test_loss_plot, acc_plot
 from losses import clf_loss, inverted_cross_entropy, d_loss_cosine_margin, g_loss_cosine_margin, d_loss_multi_angular_2k, g_loss_multi_angular_2k, g_loss_additive_angular_arccos, d_loss_additive_angular_arccos
+from ramps import linear_rampup, cosine_rampdown
 from parser import create_parser 
 import torch
 import torch.nn.functional as F
@@ -18,6 +19,19 @@ import logging
 def save_checkpoint(state, dirpath):
     best_path = os.path.join(dirpath, 'best.ckpt')
     torch.save(state, best_path)
+
+def adjust_learning_rate(args, optimizer, epoch, step_in_epoch, total_steps_in_epoch):
+    lr = args.lr
+    epoch = epoch + step_in_epoch / total_steps_in_epoch
+
+    lr = linear_rampup(epoch, args.lr_rampup) * (args.lr - args.initial_lr) + args.initial_lr
+
+    if args.lr_rampdown_epochs:
+        assert args.lr_rampdown_epochs >= args.epochs
+        lr *= cosine_rampdown(epoch, args.lr_rampdown_epochs)
+
+    for param_group in optimizer.param_groups:
+        param_group['lr'] = lr
 
 def visualize_generated_images(epoch, sample_z_, args, fix=True):
     G.eval()
@@ -41,8 +55,7 @@ def visualize_generated_images(epoch, sample_z_, args, fix=True):
     save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
                         os.path.join(generated_images_dir, 'epoch%03d' % epoch + '.png'))
 
-
-def load_checkpoint(args, C, G, D, optimizer):
+def load_checkpoint(args, C, G, D, C_optimizer):
     LOG.info("=> loading checkpoint '{}'".format(args.resume))
     best_file = os.path.join(args.resume, 'best.ckpt')
     G_file = os.path.join(args.resume, 'G.pkl')
@@ -63,32 +76,6 @@ def load_checkpoint(args, C, G, D, optimizer):
 
     LOG.info("=> loaded checkpoint '{}' | Best accuracy: {} (epoch {})".format(args.resume, round(best_acc,4), checkpoint['epoch']))
     return best_acc, start_epoch
-
-# def linear_rampup(current, rampup_length):
-#     """Linear rampup"""
-#     assert current >= 0 and rampup_length >= 0
-#     if current >= rampup_length:
-#         return 1.0
-#     else:
-#         return current / rampup_length
-
-# def cosine_rampdown(current, rampdown_length):
-#     """Cosine rampdown from https://arxiv.org/abs/1608.03983"""
-#     assert 0 <= current <= rampdown_length
-#     return float(.5 * (np.cos(np.pi * current / rampdown_length) + 1))
-
-# def adjust_learning_rate(args, optimizer, epoch, step_in_epoch, total_steps_in_epoch):
-#     lr = args.lrC
-#     epoch = epoch + step_in_epoch / total_steps_in_epoch
-
-#     lr = linear_rampup(epoch, args.lrC_rampup) * (args.lrC - args.initial_lrC) + args.initial_lrC
-
-#     if args.lrC_rampdown_epochs:
-#         assert args.lrC_rampdown_epochs >= args.num_epoch
-#         lr *= cosine_rampdown(epoch, args.lrC_rampdown_epochs)
-
-#     for param_group in optimizer.param_groups:
-#         param_group['lr'] = lr
 
 if __name__ == '__main__':
     args = create_parser()
@@ -112,7 +99,6 @@ if __name__ == '__main__':
                                            date_time_now)
 
     generated_images_dir = os.path.join(checkpoint_path, args.generated_images_dir)
-    labeled_indexes_file = os.path.join(checkpoint_path, args.labeled_indexes_dir + '.txt')
 
     acc_time_file = os.path.join(checkpoint_path, args.acc_time + '.txt')
     acc_time_best_file = os.path.join(checkpoint_path, args.acc_time + '_best.txt')
@@ -152,21 +138,15 @@ if __name__ == '__main__':
     D_optimizer = optim.Adam(D.parameters(), lr=args.lrD, betas=(args.beta1, args.beta2))
     
     # create schedulers
-    C_scheduler = ReduceLROnPlateau(C_optimizer, "min")
-    C_scheduler_warmup = StepLR(C_optimizer, step_size=10, gamma=0.5)
-    G_scheduler = StepLR(G_optimizer, step_size=10, gamma=0.5)
-    D_scheduler = StepLR(D_optimizer, step_size=10, gamma=0.5)
+    if args.scheduler:
+        C_scheduler_warmup = StepLR(C_optimizer, step_size=10, gamma=0.9)
+        C_scheduler = StepLR(C_optimizer, step_size=10, gamma=0.9)
 
     # fixed noise
     sample_z_ = torch.rand(args.batch_size, args.z_dim).to(args.device)
 
     # load dataset
-    # labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader(args.dataset, args)
     labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
-    if not args.resume:
-        with open(labeled_indexes_file, mode='w', encoding='utf-8') as f:
-            for i in labeled_indexes:
-                f.write(str(i) + '\n')
     LOG.info(f'Labeled size: {len(labeled_indexes)}, Unlabeled size: {50000 - len(labeled_indexes)}')
 
     train_hist = {}
@@ -213,22 +193,21 @@ if __name__ == '__main__':
                 if args.num_labeled == 50:
                     gate = 0.6
                 elif args.num_labeled == 100:
-                    gate = 0.78
+                    gate = 0.8
                 elif args.num_labeled == 600:
-                    gate = 0.9
-                elif args.num_labeled == 1000:
                     gate = 0.93
-                elif args.num_labeled == 3000:
+                elif args.num_labeled == 1000:
                     gate = 0.95
+                elif args.num_labeled == 3000:
+                    gate = 0.97
 
                 LOG.info(f'Training C to archieve at least {gate} accuracy')
                 correct_rate = 0
-                count = 0
+                count = 0 # support adjust learning rate of C 
                 while True:
                     for iter, (x_labeled, y_labeled) in enumerate(labeled_loader):
                         x_labeled, y_labeled = x_labeled.to(args.device), y_labeled.to(args.device)
-                        # train C
-                        C.train()
+                        C.train() # train C
                         C_optimizer.zero_grad()
                         _, output = C(x_labeled)
                         C_loss = clf_loss(output, y_labeled)
@@ -256,17 +235,18 @@ if __name__ == '__main__':
                                 ))
                             correct_rate = correct / len(test_loader.dataset)
                             train_hist['test_accuracy'].append(correct_rate)
-                        # update lrC make C can not convergence
-                        # if count % 64 == 0:
-                        #     #  update learning rate
-                        #     C_scheduler_warmup.step()
-                        #     # LOG.info(f'lrC: {C_optimizer.param_groups[0]["lr"]}')
-                        #     LOG.info(f'Step: {count} | Update lrC :{C_scheduler_warmup.get_last_lr()[0]}')
+                        
+                        if args.scheduler:
+                            if count % 20 == 0:
+                                #  update learning rate
+                                C_scheduler_warmup.step()
+                                # LOG.info(f'lrC: {C_optimizer.param_groups[0]["lr"]}')
+                                LOG.info(f'Step: {count} | Update lrC :{C_scheduler_warmup.get_last_lr()[0]}')
 
-                    if correct_rate > gate:
+                    if correct_rate >= gate:
                         break
 
-        C_optimizer.param_groups[0]['lr'] = args.lrC  
+        C_optimizer.param_groups[0]['lr'] = args.lrC # recover C learning rate
         correct_wei = 0
         number = 0
         labeled_iter = labeled_loader.__iter__()
@@ -274,7 +254,7 @@ if __name__ == '__main__':
         # train C on unlabeled data
         C.train()
         for iter, (x_u, y_u) in enumerate(unlabeled_loader):
-            # adjust_learning_rate(args, C_optimizer, epoch, iter, len(unlabeled_loader))
+            # adjust_learning_rate(args, C_optimizer, epoch, iter, len(unlabeled_loader)) # thu nghiem 
 
             if iter == len(unlabeled_loader.dataset) // args.batch_size:
                 if epoch > 0:
@@ -285,8 +265,7 @@ if __name__ == '__main__':
 
             try:
                 x_labeled, y_labeled = labeled_iter.__next__()
-                # length of x_labeled < batch_size -> generate a new iter
-                if len(x_labeled) != args.batch_size:
+                if len(x_labeled) != args.batch_size: # number of labels < batch size -> generate a new iter
                     labeled_iter = labeled_loader.__iter__()
                     x_labeled, y_labeled = labeled_iter.__next__()
             except StopIteration:
@@ -303,7 +282,7 @@ if __name__ == '__main__':
             C_labeled_loss = clf_loss(C_labeled_pred, y_labeled)
 
             _, C_unlabeled_pred = C(x_u)
-            C_unlabeled_true = torch.argmax(C_unlabeled_pred, dim=1) # make labels for unlabeled data 
+            C_unlabeled_true = torch.argmax(C_unlabeled_pred, dim=1) # make pseudo labels for unlabeled data 
             C_unlabeled_loss = clf_loss(C_unlabeled_pred,  C_unlabeled_true)
 
             correct_wei += C_unlabeled_true.eq(y_u).sum().item()
@@ -311,7 +290,7 @@ if __name__ == '__main__':
 
             G_ = G(z_)
             C_fake_pred, _  = C(G_)
-            C_fake_true = torch.argmax(C_fake_pred, dim=1) # make labels for fake data  
+            C_fake_true = torch.argmax(C_fake_pred, dim=1) # make pseudo labels for fake data  
             C_fake_true = F.one_hot(C_fake_true, 10) # make one-hot for y true
             C_fake_loss = inverted_cross_entropy(C_fake_pred, C_fake_true)
 
@@ -323,10 +302,8 @@ if __name__ == '__main__':
 
             # update D network
             D_optimizer.zero_grad()
-
             D_labeled = D(x_labeled)
             D_unlabeled = D(x_u)
-            assert len(D_labeled) == len(D_unlabeled), 'len(x_l) must equals len(x_u)'
             D_real = (D_labeled + D_unlabeled)/2 
 
             G_ = G(z_)
@@ -350,7 +327,6 @@ if __name__ == '__main__':
 
             D_labeled = D(x_labeled)
             D_unlabeled = D(x_u)
-            assert len(D_labeled) == len(D_unlabeled), 'len(x_l) must equals len(x_u)'
             D_real = (D_labeled + D_unlabeled)/2
 
             if args.mode == "rmcos":
@@ -392,9 +368,7 @@ if __name__ == '__main__':
                 pred = torch.argmax(output, dim=1, keepdim=True)  # get the index of the max log-probability
                 average_loss += test_loss
                 correct += pred.eq(y_test.view_as(pred)).sum().item()
-
         average_loss /= test_steps
-        # train_hist['test_loss'].append(test_loss)
 
         correct_rate = correct / len(test_loader.dataset)
         cur_time = time.time() - epoch_start_time
@@ -431,9 +405,8 @@ if __name__ == '__main__':
         with torch.no_grad():
             visualize_generated_images(epoch, sample_z_, args)
         
-        # C_scheduler.step(average_loss)
-        # G_scheduler.step()
-        # D_scheduler.step()
+        if args.scheduler:
+            C_scheduler.step(average_loss)
 
     # best accuracy
     with open(acc_time_best_file, 'a') as f:
