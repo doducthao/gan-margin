@@ -81,6 +81,7 @@ if __name__ == '__main__':
     args = create_parser()
     if args.num_labeled == 50:
         args.batch_size = 32 
+    id_txt = 'id-' + args.labeled_indexes.split("/")[-1].replace(".txt", "")
     if args.resume:
         checkpoint_path = args.resume
         date_time_now = datetime.now()
@@ -89,14 +90,14 @@ if __name__ == '__main__':
         date_time_now = datetime.now()
         date_time_now = "{:%Y-%m-%d_%H:%M:%S}".format(date_time_now)
         if args.mode == "rmcos":
-            checkpoint_path = os.path.join("out_rmcos", args.dataset, str(args.num_labeled), str(args.alpha),
-                                           date_time_now)
+            checkpoint_path = os.path.join("out_rmcos", args.dataset, str(args.num_labeled), str(args.alpha), str(args.m), id_txt,
+                                        date_time_now)
         elif args.mode == "rmlsoftmax":
-            checkpoint_path = os.path.join("out_rmlsoftmax", args.dataset, str(args.num_labeled), str(args.alpha),
-                                           date_time_now)
+            checkpoint_path = os.path.join("out_rmlsoftmax", args.dataset, str(args.num_labeled), str(args.alpha), str(args.m), id_txt,
+                                        date_time_now)
         elif args.mode == "rmarc":
-            checkpoint_path = os.path.join("out_rmarc", args.dataset, str(args.num_labeled), str(args.alpha),
-                                           date_time_now)
+            checkpoint_path = os.path.join("out_rmarc", args.dataset, str(args.num_labeled), str(args.alpha), str(args.m), id_txt,
+                                        date_time_now)
 
     generated_images_dir = os.path.join(checkpoint_path, args.generated_images_dir)
 
