@@ -23,7 +23,6 @@ class generator(nn.Module):
             nn.ConvTranspose2d(64, output_dim, 4, 2, 1),
             nn.Tanh()
         )
-        utils.initialize_weights(self)
 
     def forward(self, input):
         x = self.fc(input)
@@ -32,10 +31,10 @@ class generator(nn.Module):
         return x
 
 class discriminator(nn.Module):
-    def __init__(self, input_dim=1, output_dim=1, input_size=32, check_margingan=False):
+    def __init__(self, input_dim=1, output_dim=1, input_size=28, retrain_margingan=False):
         super(discriminator, self).__init__()
         self.input_size = input_size
-        self.check_margingan = check_margingan # retrain model marginGAN at https://github.com/DJjjjhao/MarginGAN
+        self.retrain_margingan = retrain_margingan # retrain model marginGAN at https://github.com/DJjjjhao/MarginGAN
 
         self.conv = nn.Sequential(
             nn.Conv2d(input_dim, 64, 4, 2, 1),
@@ -44,12 +43,12 @@ class discriminator(nn.Module):
             nn.BatchNorm2d(128),
             nn.LeakyReLU(0.2)
         )
-        if self.check_margingan:
+        if self.retrain_margingan:
             self.fc = nn.Sequential(
-                nn.Linear(128 * (self.input_size // 4) * (self.input_size // 4), 1024),
+                nn.Linear(128 * (input_size // 4) * (input_size // 4), 1024),
                 nn.BatchNorm1d(1024),
                 nn.LeakyReLU(0.2),
-                nn.Linear(1024, self.output_dim),
+                nn.Linear(1024, output_dim),
                 nn.Sigmoid(),
             )   
         else:
@@ -59,17 +58,13 @@ class discriminator(nn.Module):
                 nn.LeakyReLU(0.2)
             )
             self.weight = torch.nn.Parameter(torch.FloatTensor(output_dim, 1024))
-            # torch.nn.init.xavier_uniform_(self.weight)
-            self.weight.weight.data.normal_(0, 0.02) # initialize weight for linear stage
-            self.weight.bias.data.zero_() # initialize bias for linear stage
-
-        utils.initialize_weights(self)
+            torch.nn.init.xavier_uniform_(self.weight) # initialize weight for linear stage
         
     def forward(self, input):
         x = self.conv(input)
         x = x.view(-1, 128 * (self.input_size // 4) * (self.input_size // 4))
         x = self.fc(x)
-        if not self.check_margingan: # train our gan-ssl models
+        if not self.retrain_margingan: # train our gan-ssl models
             x = F.linear(F.normalize(x), F.normalize(self.weight))
         return x
 
@@ -79,9 +74,7 @@ class classifier(nn.Module):
         self.conv1 = nn.Conv2d(1, 20, 5, 1)
         self.conv2 = nn.Conv2d(20, 50, 5, 1)
         self.fc1 = nn.Linear(4*4*50, 500)
-        self.fc2 = nn.Linear(500, 10)
-        utils.initialize_weights(self)
-    
+        self.fc2 = nn.Linear(500, 10)    
         self.log_softmax = nn.LogSoftmax(dim=1)
         self.softmax = nn.Softmax(dim=1)
 

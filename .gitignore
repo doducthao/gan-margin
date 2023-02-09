@@ -2,6 +2,7 @@ mnist/data
 mnist/out_rmcos
 mnist/out_rlmsoftmax
 mnist/out_rmarc
+mnist/out_margingan
 further/data-local/images
 further/data-local/workdir
 further/out_rmcos

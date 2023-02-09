@@ -13,7 +13,7 @@ def create_parser():
     parser.add_argument('--generated_images_dir', type=str, default='generated_images')
 
     parser.add_argument('--benchmark_mode', type=bool, default=True)
-    parser.add_argument('--mode', type=str, default='rmcos', choices=['rmcos', 'rmlsoftmax','rmarc'], required=True)
+    parser.add_argument('--mode', type=str, default='rmcos', choices=['rmcos', 'rmlsoftmax','rmarc', 'margingan'], required=True)
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--input_size', type=int, default=28)
     parser.add_argument('--z_dim', type=int, default=64)
@@ -26,9 +26,6 @@ def create_parser():
     parser.add_argument('--beta2', type=float, default=0.999)
     parser.add_argument('--scheduler', type=bool, default=False)
     
-    # parser.add_argument('--initial-lrC', default=0.0, type=float)
-    # parser.add_argument('--lrC-rampup', default=0, type=int)
-    # parser.add_argument('--lrC-rampdown-epochs', default=None, type=int)
     # m, s
     parser.add_argument('--m', type=float, default=0.15)
     parser.add_argument('--s', type=float, default=10.0)
@@ -45,8 +42,7 @@ def create_parser():
     # resume
     parser.add_argument('--resume', type=str, default='')
     # labeled_indexes
-    parser.add_argument('--labeled_indexes', type=str, default='') 
-
+    parser.add_argument('--labeled_indexes', type=str, default='')
 
     return parser.parse_args()
 

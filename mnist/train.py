@@ -1,11 +1,12 @@
 from cProfile import label
 from dataloader import dataloader_given_indexes
-from net import generator, discriminator, classifier, initialize_weights
-from utils import save_images, generate_animation, train_loss_plot, test_loss_plot, acc_plot
-from losses import clf_loss, inverted_cross_entropy, d_loss_cosine_margin, g_loss_cosine_margin, d_loss_multi_angular_2k, g_loss_multi_angular_2k, g_loss_additive_angular_arccos, d_loss_additive_angular_arccos
+from net import generator, discriminator, classifier
+from utils import save_images, generate_animation, train_loss_plot, test_loss_plot, acc_plot, initialize_weights
+from losses import *
 from ramps import linear_rampup, cosine_rampdown
 from parser import create_parser 
 import torch
+import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.optim.lr_scheduler import StepLR, ReduceLROnPlateau
@@ -81,7 +82,7 @@ if __name__ == '__main__':
     args = create_parser()
     if args.num_labeled == 50:
         args.batch_size = 32 
-    id_txt = 'id-' + args.labeled_indexes.split("/")[-1].replace(".txt", "")
+    id_txt = 'id:' + args.labeled_indexes.split("/")[-1].replace(".txt", "")
     if args.resume:
         checkpoint_path = args.resume
         date_time_now = datetime.now()
@@ -90,14 +91,17 @@ if __name__ == '__main__':
         date_time_now = datetime.now()
         date_time_now = "{:%Y-%m-%d_%H:%M:%S}".format(date_time_now)
         if args.mode == "rmcos":
-            checkpoint_path = os.path.join("out_rmcos", args.dataset, str(args.num_labeled), str(args.alpha), str(args.m), id_txt,
+            checkpoint_path = os.path.join("out_rmcos", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
                                         date_time_now)
         elif args.mode == "rmlsoftmax":
-            checkpoint_path = os.path.join("out_rmlsoftmax", args.dataset, str(args.num_labeled), str(args.alpha), str(args.m), id_txt,
+            checkpoint_path = os.path.join("out_rmlsoftmax", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
                                         date_time_now)
         elif args.mode == "rmarc":
-            checkpoint_path = os.path.join("out_rmarc", args.dataset, str(args.num_labeled), str(args.alpha), str(args.m), id_txt,
+            checkpoint_path = os.path.join("out_rmarc", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
                                         date_time_now)
+        elif args.mode == "margingan":
+            checkpoint_path = os.path.join("out_margingan", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), id_txt,
+                                        date_time_now)                 
 
     generated_images_dir = os.path.join(checkpoint_path, args.generated_images_dir)
 
@@ -117,8 +121,11 @@ if __name__ == '__main__':
     LOG.info(f"args: {args}")
 
     # create nets
+    if args.mode == 'margingan': 
+        D = discriminator(input_size=args.input_size, retrain_margingan=True).to(args.device)
+    else:
+        D = discriminator(input_size=args.input_size).to(args.device)
     G = generator(input_dim=args.z_dim, output_dim=1, input_size=args.input_size).to(args.device)
-    D = discriminator(input_size=args.input_size).to(args.device)
     C = classifier().to(args.device)
 
     # use multiple gpus
@@ -247,16 +254,14 @@ if __name__ == '__main__':
                     if correct_rate >= gate:
                         break
 
-        C_optimizer.param_groups[0]['lr'] = args.lrC # recover C learning rate
+        C_optimizer.param_groups[0]['lr'] = args.lrC # recover C's learning rate as the initialization
         correct_wei = 0
         number = 0
         labeled_iter = labeled_loader.__iter__()
 
-        # train C on unlabeled data
-        C.train()
-        for iter, (x_u, y_u) in enumerate(unlabeled_loader):
+        C.train() # train C on unlabeled data
+        for iter, (x_unlabeled, y_unlabeled) in enumerate(unlabeled_loader):
             # adjust_learning_rate(args, C_optimizer, epoch, iter, len(unlabeled_loader)) # thu nghiem 
-
             if iter == len(unlabeled_loader.dataset) // args.batch_size:
                 if epoch > 0:
                     LOG.info('\nPseudo tag || Accuracy: {}/{} ({:.0f}%)\n'.format(
@@ -274,7 +279,7 @@ if __name__ == '__main__':
                 x_labeled, y_labeled = labeled_iter.__next__()
 
             z_ = torch.rand(args.batch_size, args.z_dim, device=args.device)
-            x_labeled, y_labeled, x_u, y_u = x_labeled.to(args.device), y_labeled.to(args.device), x_u.to(args.device), y_u.to(args.device)
+            x_labeled, y_labeled, x_unlabeled, y_unlabeled = x_labeled.to(args.device), y_labeled.to(args.device), x_unlabeled.to(args.device), y_unlabeled.to(args.device)
 
             # update C
             C_optimizer.zero_grad()
@@ -282,19 +287,22 @@ if __name__ == '__main__':
             _, C_labeled_pred = C(x_labeled)
             C_labeled_loss = clf_loss(C_labeled_pred, y_labeled)
 
-            _, C_unlabeled_pred = C(x_u)
+            _, C_unlabeled_pred = C(x_unlabeled)
             C_unlabeled_true = torch.argmax(C_unlabeled_pred, dim=1) # make pseudo labels for unlabeled data 
             C_unlabeled_loss = clf_loss(C_unlabeled_pred,  C_unlabeled_true)
 
-            correct_wei += C_unlabeled_true.eq(y_u).sum().item()
-            number += len(y_u)
+            correct_wei += C_unlabeled_true.eq(y_unlabeled).sum().item()
+            number += len(y_unlabeled)
 
             G_ = G(z_)
             C_fake_pred, _  = C(G_)
             C_fake_true = torch.argmax(C_fake_pred, dim=1) # make pseudo labels for fake data  
             C_fake_true = F.one_hot(C_fake_true, 10) # make one-hot for y true
-            C_fake_loss = inverted_cross_entropy(C_fake_pred, C_fake_true)
-
+            if args.mode == 'margingan':
+                C_fake_loss = nll_loss_neg(C_fake_pred, C_fake_true)
+            else:
+                C_fake_loss = inverted_cross_entropy(C_fake_pred, C_fake_true)
+            # C_fake_loss = inverted_cross_entropy(C_fake_pred, C_fake_true)
             C_loss = C_labeled_loss + C_unlabeled_loss + C_fake_loss
         
             train_hist['C_loss'].append(C_loss.item())
@@ -304,7 +312,7 @@ if __name__ == '__main__':
             # update D network
             D_optimizer.zero_grad()
             D_labeled = D(x_labeled)
-            D_unlabeled = D(x_u)
+            D_unlabeled = D(x_unlabeled)
             D_real = (D_labeled + D_unlabeled)/2 
 
             G_ = G(z_)
@@ -315,6 +323,11 @@ if __name__ == '__main__':
                 D_loss = d_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
             elif  args.mode == "rmarc":
                 D_loss = d_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
+            elif args.mode == 'margingan':
+                D_labeled_loss = BCELoss(D_labeled, torch.ones_like(D_labeled))
+                D_unlabeled_loss = BCELoss(D_unlabeled, torch.ones_like(D_unlabeled))
+                D_fake_loss = BCELoss(D_fake, torch.zeros_like(D_fake))
+                D_loss = D_labeled_loss + D_unlabeled_loss + D_fake_loss
 
             train_hist['D_loss'].append(D_loss.item())
             D_loss.backward()
@@ -327,7 +340,7 @@ if __name__ == '__main__':
             D_fake = D(G_)
 
             D_labeled = D(x_labeled)
-            D_unlabeled = D(x_u)
+            D_unlabeled = D(x_unlabeled)
             D_real = (D_labeled + D_unlabeled)/2
 
             if args.mode == "rmcos":
@@ -336,12 +349,14 @@ if __name__ == '__main__':
                 G_loss_D = g_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
             elif args.mode == "rmarc":
                 G_loss_D = g_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
+            elif args.mode == 'margingan':
+                G_loss_D = BCELoss(D_fake, torch.ones_like(D_fake))
 
             _, C_fake_pred = C(G_)
             C_fake_true = torch.argmax(C_fake_pred, dim=1) # (vals, indices)
             G_loss_C  = clf_loss(C_fake_pred, C_fake_true)
 
-            G_loss = args.alpha * G_loss_D + (1-args.alpha) * G_loss_C # consider to adjust alpha
+            G_loss = args.alpha * G_loss_D + (1-args.alpha) * G_loss_C # interpolation from the impaction of D and C on G
 
             train_hist['G_loss'].append(G_loss.item())
             G_loss_D.backward(retain_graph=True)

@@ -3,8 +3,8 @@ import torch.nn as nn
 import math 
 from scipy.special import binom
 
-BCEloss = torch.nn.BCEWithLogitsLoss()
-
+BCEWithLogitsLoss = torch.nn.BCEWithLogitsLoss()
+BCELoss = torch.nn.BCELoss()
 clf_loss = nn.NLLLoss()
 
 def nll_loss_neg(y_pred, y_true):  # # #
@@ -17,11 +17,11 @@ def inverted_cross_entropy(y_pred, y_true):
 # rmcos
 def d_loss_cosine_margin(real, fake, y, m=0.15, s=10.0):
     real = real - m
-    return BCEloss(s*(real - fake) + 1e-6 , y)
+    return BCEWithLogitsLoss(s*(real - fake) + 1e-6 , y)
 # rmcos
 def g_loss_cosine_margin(real, fake, y, m=0.15, s=10.0):
     fake = fake + m
-    return BCEloss(s*(fake - real) + 1e-6, y)
+    return BCEWithLogitsLoss(s*(fake - real) + 1e-6, y)
 
 def calculate_phi_theta(cos_theta, m=4): # m: margin
     C_m_2n = torch.Tensor(binom(m, range(0, m + 1, 2))).cuda()  # C_m^{2n}
@@ -56,21 +56,21 @@ def find_k(cos_theta, m):
 def d_loss_multi_angular_2k(real, fake, y, m=4, s = 10.0):
     m = int(m)
     real = calculate_phi_theta(real, m)
-    return BCEloss(s * (real - torch.mean(fake)) + 1e-6, y)
+    return BCEWithLogitsLoss(s * (real - torch.mean(fake)) + 1e-6, y)
 # rmlsoftmax
 def g_loss_multi_angular_2k(real, fake, y, m=4, s = 10.0):
     m = int(m)
     fake = calculate_phi_theta(fake, m)
-    return BCEloss(s * (fake - torch.mean(real)) + 1e-6, y)
+    return BCEWithLogitsLoss(s * (fake - torch.mean(real)) + 1e-6, y)
 # rmarc
 def d_loss_additive_angular_arccos(real, fake, y, m=2.35, s = 10.0):
     real.arccos_()
     real = real + m
     real.cos_()
-    return BCEloss(s * (real - torch.mean(fake)) + 1e-6, y)
+    return BCEWithLogitsLoss(s * (real - torch.mean(fake)) + 1e-6, y)
 # rmarc
 def g_loss_additive_angular_arccos(real, fake, y, m=2.35, s = 10.0):
     fake.arccos_()
     fake = fake + m
     fake.cos_()
-    return BCEloss(s * (fake - torch.mean(real)) + 1e-6, y)
+    return BCEWithLogitsLoss(s * (fake - torch.mean(real)) + 1e-6, y)
