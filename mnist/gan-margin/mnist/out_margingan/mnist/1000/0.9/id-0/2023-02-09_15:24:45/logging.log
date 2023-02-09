@@ -1,4 +1,0 @@
-INFO:main:Start training at 2023-02-09_15:31:59
-INFO:main:args: Namespace(acc_time='acc_time', alpha=0.9, batch_size=64, benchmark_mode=True, beta1=0.5, beta2=0.999, checkpoint_epochs=1, dataset='mnist', device='cuda', generated_images_dir='generated_images', index=1, input_size=28, labeled_indexes='uniform_labeled/1000/0.txt', lrC=0.1, lrD=0.0002, lrG=0.0002, m=0.15, mode='margingan', momentum=0.5, num_epoch=40, num_labeled=1000, num_samples=100, resume='gan-margin/mnist/out_margingan/mnist/1000/0.9/id-0/2023-02-09_15:24:45', s=10.0, scheduler=False, z_dim=64)
-INFO:main:Labeled size: 1000, Unlabeled size: 49000
-INFO:main:=> loading checkpoint 'gan-margin/mnist/out_margingan/mnist/1000/0.9/id-0/2023-02-09_15:24:45'
