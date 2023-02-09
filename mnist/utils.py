@@ -3,6 +3,7 @@ import imageio
 import matplotlib.pyplot as plt
 import os
 import argparse
+import torch.nn as nn 
 
 def parse_args():
     desc = "Relativistic Large Margin Softmax Semi-supervised Learning"
@@ -139,3 +140,15 @@ def acc_plot(hist, path):
     path = os.path.join(path, 'TestAcc.png')
     plt.savefig(path)
     return 
+
+def initialize_weights(net):
+    for m in net.modules():
+        if isinstance(m, nn.Conv2d):
+            m.weight.data.normal_(0, 0.02)
+            m.bias.data.zero_()
+        elif isinstance(m, nn.ConvTranspose2d):
+            m.weight.data.normal_(0, 0.02)
+            m.bias.data.zero_()
+        elif isinstance(m, nn.Linear):
+            m.weight.data.normal_(0, 0.02)
+            m.bias.data.zero_()
