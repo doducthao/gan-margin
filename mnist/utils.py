@@ -2,47 +2,7 @@ import numpy as np
 import imageio
 import matplotlib.pyplot as plt
 import os
-import argparse
 import torch.nn as nn 
-
-def parse_args():
-    desc = "Relativistic Large Margin Softmax Semi-supervised Learning"
-    parser = argparse.ArgumentParser(description=desc)
-    # parser.add_argument('--ablation', type=bool, default=False)
-    parser.add_argument('--device', type=str, default='cuda')
-    parser.add_argument('--gan_type', type=str, default='rlmsoftmax-ssl',
-                        choices=['rlmsoftmax-ssl'],
-                        help='Type of GAN-SSL')
-    parser.add_argument('--dataset', type=str, default='mnist', choices=['mnist'],
-                        help='The name of dataset')
-    parser.add_argument('--split', type=str, default='', help='The split flag for svhn and stl10')
-    parser.add_argument('--batch_size', type=int, default=64, help='The size of batch')
-    parser.add_argument('--input_size', type=int, default=28, help='The size of input image')
-    parser.add_argument('--model_dir', type=str, default='models',
-                        help='Directory name to save the model')
-    parser.add_argument('--result_dir', type=str, default='results', help='Directory name to save the generated images')
-    parser.add_argument('--acc_time_dir', type=str, default='acc_time', help='Directory name to save accuracy and time training')
-    parser.add_argument('--labeled_data_indices', type=str, default='labeled_data_indices', help='Directory name to save labeled data indices')
-
-    parser.add_argument('--lrG', type=float, default=0.0002)
-    parser.add_argument('--lrD', type=float, default=0.0002)
-    parser.add_argument('--lrC', type=float, default=0.1)
-    parser.add_argument('--momentum', type=float, default=0.5)
-    parser.add_argument('--beta1', type=float, default=0.5)
-    parser.add_argument('--beta2', type=float, default=0.999)
-    parser.add_argument('--gpu_mode', type=bool, default=True)
-    parser.add_argument('--benchmark_mode', type=bool, default=True)
-    parser.add_argument('--num_labels', type=int, default=100)
-    parser.add_argument('--alpha', type=float, default=0.9)
-    parser.add_argument('--index', type=int, default=1)
-    parser.add_argument('--epoch',  type=int, default=40, help='The number of epochs to run')
-
-    parser.add_argument('--change_nlabels', type=bool, default=False, help="change number of labeled data")
-    parser.add_argument('--change_alpha', type=bool, default=False, help="change alpha values")
-
-    args = parser.parse_args()
-
-    return args
 
 # print network
 def print_network(net):
