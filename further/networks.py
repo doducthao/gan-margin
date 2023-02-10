@@ -1,51 +1,33 @@
 import math
 import itertools
-
 import torch
 from torch import nn
 from torch.nn import functional as F
 from torch.autograd import Variable, Function
-
 from utils import export
 
-def initialize_weights(net): # # #
-    for m in net.modules():
-        if isinstance(m, nn.Conv2d):
-            m.weight.data.normal_(0, 0.02)
-            m.bias.data.zero_()
-        elif isinstance(m, nn.ConvTranspose2d):
-            m.weight.data.normal_(0, 0.02)
-            m.bias.data.zero_()
-        elif isinstance(m, nn.Linear):
-            m.weight.data.normal_(0, 0.02)
-            m.bias.data.zero_()
-
-# G
-class generator(nn.Module):  # # #
+class generator(nn.Module):
     # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
     # Architecture : FC1024_BR-FC7x7x128_BR-(64)4dc2s_BR-(1)4dc2s_S
-    def __init__(self, input_dim=100, output_dim=1, input_size=32):
+    def __init__(self, input_dim=100, output_dim=3, input_size=32):
         super(generator, self).__init__()
-        self.input_dim = input_dim
-        self.output_dim = output_dim
         self.input_size = input_size
 
         self.fc = nn.Sequential(
-            nn.Linear(self.input_dim, 1024),
+            nn.Linear(input_dim, 1024),
             nn.BatchNorm1d(1024),
             nn.ReLU(),
-            nn.Linear(1024, 128 * (self.input_size // 4) * (self.input_size // 4)),
-            nn.BatchNorm1d(128 * (self.input_size // 4) * (self.input_size // 4)),
+            nn.Linear(1024, 128 * (input_size // 4) * (input_size // 4)),
+            nn.BatchNorm1d(128 * (input_size // 4) * (input_size // 4)),
             nn.ReLU(),
         )
         self.deconv = nn.Sequential(
-            nn.ConvTranspose2d(128, 64, 4, 2, 1),   # 4,2,1可以将大小扩大一倍
+            nn.ConvTranspose2d(128, 64, 4, 2, 1), 
             nn.BatchNorm2d(64),
             nn.ReLU(),
-            nn.ConvTranspose2d(64, self.output_dim, 4, 2, 1),
+            nn.ConvTranspose2d(64, output_dim, 4, 2, 1),
             nn.Tanh(),
         )
-        initialize_weights(self)
 
     def forward(self, input):
         x = self.fc(input)
@@ -53,37 +35,44 @@ class generator(nn.Module):  # # #
         x = self.deconv(x)
         return x
 
-# D
-class discriminator(nn.Module):  # # #
+class discriminator(nn.Module):
     # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
     # Architecture : (64)4c2s-(128)4c2s_BL-FC1024_BL-FC1_S
-    def __init__(self, input_dim=1, output_dim=1, input_size=32):
+    def __init__(self, input_dim=3, output_dim=1, input_size=32, retrain_margingan=False):
         super(discriminator, self).__init__()
-        self.input_dim = input_dim
-        self.output_dim = output_dim
         self.input_size = input_size
+        self.retrain_margingan = retrain_margingan # retrain model marginGAN at https://github.com/DJjjjhao/MarginGAN
 
         self.conv = nn.Sequential(
-            nn.Conv2d(self.input_dim, 64, 4, 2, 1), # 4，2，1缩小1倍
+            nn.Conv2d(input_dim, 64, 4, 2, 1),
             nn.LeakyReLU(0.2),
             nn.Conv2d(64, 128, 4, 2, 1),
             nn.BatchNorm2d(128),
             nn.LeakyReLU(0.2),
         )
-        self.fc = nn.Sequential(
-            nn.Linear(128 * (self.input_size // 4) * (self.input_size // 4), 1024),
+        if self.retrain_margingan:
+            self.fc = nn.Sequential(
+            nn.Linear(128 * (input_size // 4) * (input_size // 4), 1024),
+            nn.BatchNorm1d(1024),
+            nn.LeakyReLU(0.2),
+            nn.Linear(1024, output_dim),
+            nn.Sigmoid()  
+            )        
+        else:
+            self.fc = nn.Sequential(
+            nn.Linear(128 * (input_size // 4) * (input_size // 4), 1024),
             nn.BatchNorm1d(1024),
             nn.LeakyReLU(0.2)            
-        )
-        self.weight = torch.nn.Parameter(torch.FloatTensor(output_dim, 1024))
-        torch.nn.init.xavier_uniform_(self.weight)
-        initialize_weights(self)
+            )
+            self.weight = torch.nn.Parameter(torch.FloatTensor(output_dim, 1024))
+            torch.nn.init.xavier_uniform_(self.weight)
 
     def forward(self, input):
         x = self.conv(input)
         x = x.view(-1, 128 * (self.input_size // 4) * (self.input_size // 4))
         x = self.fc(x)
-        x = F.linear(F.normalize(x), F.normalize(self.weight))
+        if not self.retrain_margingan: # train our gan-ssl models
+            x = F.linear(F.normalize(x), F.normalize(self.weight))
         return x
 
 # Clasifier
@@ -96,7 +85,6 @@ def cifar_shakeshake26(pretrained=False, **kwargs):
                         downsample='shift_conv', **kwargs)
     return model
 
-
 @export
 def resnext152(pretrained=False, **kwargs):
     assert not pretrained
@@ -106,9 +94,6 @@ def resnext152(pretrained=False, **kwargs):
                           groups=32,
                           downsample='basic', **kwargs)
     return model
-
-
-
 class ResNet224x224(nn.Module):
     def __init__(self, block, layers, channels, groups=1, num_classes=1000, downsample='basic'):
         super().__init__()
@@ -242,8 +227,6 @@ def conv3x3(in_planes, out_planes, stride=1):
     "3x3 convolution with padding"
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
                      padding=1, bias=False)
-
-
 class BottleneckBlock(nn.Module):
     @classmethod
     def out_channels(cls, planes, groups):
@@ -284,8 +267,6 @@ class BottleneckBlock(nn.Module):
             residual = self.downsample(residual)
 
         return self.relu(residual + a)
-
-
 class ShakeShakeBlock(nn.Module):
     @classmethod
     def out_channels(cls, planes, groups):
@@ -329,9 +310,7 @@ class ShakeShakeBlock(nn.Module):
 
         if self.downsample is not None:
             residual = self.downsample(x)
-
         return residual + ab
-
 
 class Shake(Function):
     @classmethod
@@ -361,7 +340,6 @@ class Shake(Function):
 
 def shake(inp1, inp2, training=False):
     return Shake.apply(inp1, inp2, training)
-
 
 class ShiftConvDownsample(nn.Module):
     def __init__(self, in_channels, out_channels):

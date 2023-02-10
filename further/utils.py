@@ -1,12 +1,13 @@
 import sys
 import numpy as np
 import imageio
+import torch.nn as nn 
 
 def save_images(images, size, image_path):
     return imsave(images, size, image_path)
 
 def imsave(images, size, path):
-    image = np.squeeze(merge(images, size))
+    image = (np.squeeze(merge(images, size))*255).astype(np.uint8)
     return imageio.imwrite(path, image)
 
 def merge(images, size):
@@ -28,9 +29,6 @@ def merge(images, size):
         return img
     else:
         raise ValueError('in merge(images,size) images parameter ''must have dimensions: HxW or HxWx3 or HxWx4')
-
-
-
 
 def parameters_string(module):
     lines = [
@@ -89,7 +87,6 @@ class AverageMeterSet:
     def counts(self, postfix='/count'):
         return {name + postfix: meter.count for name, meter in self.meters.items()}
 
-
 class AverageMeter:
     """Computes and stores the average and current value"""
 
@@ -120,3 +117,15 @@ def export(fn):
 
 def parameter_count(module):
     return sum(int(param.numel()) for param in module.parameters())
+
+def initialize_weights(net):
+    for m in net.modules():
+        if isinstance(m, nn.Conv2d):
+            m.weight.data.normal_(0, 0.02)
+            m.bias.data.zero_()
+        elif isinstance(m, nn.ConvTranspose2d):
+            m.weight.data.normal_(0, 0.02)
+            m.bias.data.zero_()
+        elif isinstance(m, nn.Linear):
+            m.weight.data.normal_(0, 0.02)
+            m.bias.data.zero_()

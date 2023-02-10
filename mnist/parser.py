@@ -32,7 +32,7 @@ def create_parser():
 
     parser.add_argument('--index', type=int, default=1)
     parser.add_argument('--num_epoch', type=int, default=40)
-    parser.add_argument('--num_labeled', type=int, default=100)
+    parser.add_argument('--num_labels', type=int, default=100)
     parser.add_argument('--alpha', type=float, default=0.9)
     
     parser.add_argument('--checkpoint_epochs', type=int, default=1)
@@ -41,8 +41,8 @@ def create_parser():
 
     # resume
     parser.add_argument('--resume', type=str, default='')
-    # labeled_indexes
-    parser.add_argument('--labeled_indexes', type=str, default='')
+    # labels
+    parser.add_argument('--args.labels', type=str, default='')
 
     return parser.parse_args()
 

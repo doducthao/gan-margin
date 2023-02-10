@@ -14,9 +14,11 @@ from datasets import cifar10
 from dataloader import NO_LABEL, relabel_dataset, TwoStreamBatchSampler
 import networks
 from networks import generator, discriminator
-from mnist.losses import *
-from utils import AverageMeterSet, assert_exactly_one, save_images
+from losses import *
+from utils import *
 from ramps import linear_rampup, cosine_rampdown, sigmoid_rampup
+import warnings
+warnings.filterwarnings("ignore")
 
 def create_model(args, ema=False):
     LOG.info("=> creating {pretrained}{ema}model '{arch}'".format(
@@ -161,7 +163,7 @@ def visualize_results(args, G, epoch, checkpoint_path):
     tot_num_samples = 64
     image_frame_dim = int(np.floor(np.sqrt(tot_num_samples)))
 
-    sample_z_ = torch.rand((tot_num_samples, args.z_dim)).cuda()
+    sample_z_ = torch.rand((tot_num_samples, args.z_dim)).to(args.device)
 
     samples = G(sample_z_)
     samples = samples.mul(0.5).add(0.5)
@@ -172,7 +174,7 @@ def visualize_results(args, G, epoch, checkpoint_path):
                           
 
 def validate(args, eval_loader, model):
-    class_criterion = nn.CrossEntropyLoss(reduction="sum", ignore_index=NO_LABEL).cuda()
+    class_criterion = nn.CrossEntropyLoss(reduction="sum", ignore_index=NO_LABEL).to(args.device)
     meters = AverageMeterSet()
 
     # switch to evaluate mode
@@ -181,8 +183,8 @@ def validate(args, eval_loader, model):
 
     for i, (input, target) in enumerate(eval_loader):
         with torch.no_grad():
-            input = torch.autograd.Variable(input.cuda())
-            target = torch.autograd.Variable(target.cuda())
+            input = torch.autograd.Variable(input.to(args.device))
+            target = torch.autograd.Variable(target.to(args.device))
 
         minibatch_size = len(target)
         labeled_minibatch_size = target.data.ne(NO_LABEL).sum()
@@ -221,7 +223,7 @@ def validate(args, eval_loader, model):
 def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D, G_optimizer, D_optimizer, epoch):
     global global_step
 
-    class_criterion = nn.CrossEntropyLoss(reduction="sum", ignore_index=NO_LABEL).cuda()
+    class_criterion = nn.CrossEntropyLoss(reduction="sum", ignore_index=NO_LABEL).to(args.device)
     if args.consistency_type == 'mse':
         consistency_criterion = softmax_mse_loss
     elif args.consistency_type == 'kl':
@@ -245,12 +247,12 @@ def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D
         adjust_learning_rate(args, optimizer, epoch, i, len(train_loader))
         meters.update('lr', optimizer.param_groups[0]['lr'])
 
-        input = torch.autograd.Variable(input.cuda())
+        input = torch.autograd.Variable(input.to(args.device))
 
         with torch.no_grad():
-            ema_input = torch.autograd.Variable(ema_input.cuda())
+            ema_input = torch.autograd.Variable(ema_input.to(args.device))
 
-        target = torch.autograd.Variable(target.cuda())
+        target = torch.autograd.Variable(target.to(args.device))
 
         minibatch_size = len(target)
         labeled_minibatch_size = target.data.ne(NO_LABEL).sum()
@@ -294,7 +296,7 @@ def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D
             meters.update('cons_loss', consistency_loss)
 
         z_ = torch.rand((args.generated_batch_size, args.z_dim))
-        z_ = z_.cuda()
+        z_ = z_.to(args.device)
         G_ = G(z_)
 
         C_fake_pred, _ = model(G_)
@@ -303,7 +305,7 @@ def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D
         with torch.no_grad():
             C_fake_wei = torch.max(C_fake_pred, 1)[1]
             # C_fake_wei = C_fake_wei.view(-1, 1)
-            # C_fake_wei = torch.zeros(args.generated_batch_size, 10).cuda().scatter_(1, C_fake_wei, 1)
+            # C_fake_wei = torch.zeros(args.generated_batch_size, 10).to(args.device).scatter_(1, C_fake_wei, 1)
             C_fake_wei = F.one_hot(C_fake_wei, 10)
         if args.mode == 'margingan':
             C_fake_loss = nll_loss_neg(C_fake_pred, C_fake_wei)
@@ -408,24 +410,26 @@ def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D
 
 if __name__ == "__main__":
     args = create_parser()
-    num_labeled = args.labels.split("/")[-2].split("_")[0]
+    num_labels = args.labels.split("/")[-2].split("_")[0]
     id_txt = args.labels.split("/")[-1].replace(".txt", "")
     if args.resume:
         checkpoint_path = args.resume
+        date_time_now = datetime.now() # to clarify start training
+        date_time_now = "{:%Y-%m-%d_%H:%M:%S}".format(date_time_now)
     else:
         date_time_now = datetime.now()
         date_time_now = "{:%Y-%m-%d_%H:%M:%S}".format(date_time_now)
         if args.mode == "rmcos":
-            checkpoint_path = os.path.join("out_rmcos", 'num:'+str(num_labeled), 'm:'+str(args.m), id_txt,
+            checkpoint_path = os.path.join("out_rmcos", 'num:'+str(num_labels), 'm:'+str(args.m), 'id:'+id_txt,
                                         date_time_now)
         elif args.mode == "rlmsoftmax":
-            checkpoint_path = os.path.join("out_rlmsoftmax", 'num:'+str(num_labeled), 'm:'+str(args.m), id_txt,
+            checkpoint_path = os.path.join("out_rlmsoftmax", 'num:'+str(num_labels), 'm:'+str(args.m), 'id:'+id_txt,
                                         date_time_now)
         elif args.mode == "rmarc":
-            checkpoint_path = os.path.join("out_rmarc", 'num:'+str(num_labeled), 'm:'+str(args.m), id_txt,
+            checkpoint_path = os.path.join("out_rmarc", 'num:'+str(num_labels), 'm:'+str(args.m), 'id:'+id_txt,
                                         date_time_now)
         elif args.mode == "margingan":
-            checkpoint_path = os.path.join("out_margingan", 'num:'+str(num_labeled), id_txt,
+            checkpoint_path = os.path.join("out_margingan", 'num:'+str(num_labels), 'id:'+id_txt,
                                         date_time_now)   
         os.makedirs(checkpoint_path, exist_ok=True)
 
@@ -450,13 +454,19 @@ if __name__ == "__main__":
                                                     eval_transformation,
                                                     datadir,
                                                     args)
-    # create models for classify
-    model = create_model(args).cuda()
-    ema_model = create_model(args, ema=True).cuda()
+    # create models for classify, each model was initialized weights
+    model = create_model(args).to(args.device)
+    ema_model = create_model(args, ema=True).to(args.device)
 
     # create generator and discriminator
-    G = generator(input_dim=args.z_dim, output_dim=3, input_size=32).cuda()
-    D = discriminator(input_dim=3, output_dim=1, input_size=32).cuda()
+    G = generator(input_dim=args.z_dim, input_size=args.input_size).to(args.device)
+    if args.mode == 'margingan': 
+        D = discriminator(input_size=args.input_size, retrain_margingan=True).to(args.device)
+    else:
+        D = discriminator(input_size=args.input_size).to(args.device)
+
+    D.apply(initialize_weights)
+    G.apply(initialize_weights)
 
     # create optimizers
     optimizer = torch.optim.SGD(model.parameters(), args.lr,
@@ -476,7 +486,6 @@ if __name__ == "__main__":
     for epoch in range(args.start_epoch, args.epochs):
         is_best = False
         start_time = time.time()
-        # train for one epoch
         train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D, G_optimizer, D_optimizer, epoch)
         LOG.info("--- training epoch in %s seconds ---" % (time.time() - start_time))
 

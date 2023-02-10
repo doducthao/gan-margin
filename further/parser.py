@@ -3,7 +3,7 @@ from email.policy import default
 
 def create_parser():
     parser = argparse.ArgumentParser(description='RMCOS-SSL & RMLSOFTMAX-SSL & RMARC_SSL')
-    parser.add_argument('--dataset', default='cifar10'),
+    parser.add_argument('--device', type=str, default='cuda')
     parser.add_argument('--train-subdir', type=str, default='train+val')
     parser.add_argument('--eval-subdir', type=str, default='test')
     parser.add_argument('--labels', default="data-local/labels/cifar10/1000_balanced_labels/00.txt", type=str, required=True)
@@ -22,16 +22,17 @@ def create_parser():
     parser.add_argument('--workers', default=18, type=int)
     parser.add_argument('--epochs', default=1, type=int, required=True)
     parser.add_argument('--start-epoch', default=0, type=int)
-    parser.add_argument('--batch-size', default=256, type=int)
-    parser.add_argument('--labeled-batch-size', default=62, type=int)
-    parser.add_argument('--generated-batch-size', default=64, type=int)
+    parser.add_argument('--input_size', type=int, default=32) # cifar10
+    parser.add_argument('--batch-size', default=128, type=int)
+    parser.add_argument('--labeled-batch-size', default=31, type=int)
+    parser.add_argument('--generated-batch-size', default=32, type=int)
 
     parser.add_argument('--z-dim', type=int, default=100)
     parser.add_argument('--lr', '--learning-rate', default=0.05, type=float)
     parser.add_argument('--initial-lr', default=0.0, type=float)
 
     parser.add_argument('--lr-rampup', default=0, type=int)
-    parser.add_argument('--lr-rampdown-epochs', default=350, type=int)
+    parser.add_argument('--lr-rampdown-epochs', default=250, type=int)
 
     parser.add_argument('--momentum', default=0.9, type=float)
     parser.add_argument('--nesterov', type=str2bool, default=True)
