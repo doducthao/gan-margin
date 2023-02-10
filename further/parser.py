@@ -9,8 +9,8 @@ def create_parser():
     parser.add_argument('--labels', default="data-local/labels/cifar10/1000_balanced_labels/00.txt", type=str, required=True)
     parser.add_argument('--exclude-unlabeled', type=str2bool, default=False)
     parser.add_argument('--arch', '-a', default='cifar_shakeshake26')
-    parser.add_argument("--mode", type=str, default="rmcos", required=True)
-    
+    parser.add_argument('--mode', type=str, default='rmcos', choices=['rmcos', 'rlmsoftmax','rmarc', 'margingan'], required=True)
+
     parser.add_argument("--m", type=float, default=0.15)
     parser.add_argument("--s", type=float, default=10.0)
     

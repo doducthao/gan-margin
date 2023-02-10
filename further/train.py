@@ -6,21 +6,16 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
 from torch.autograd import Variable
 from torch.utils.data.sampler import BatchSampler, SubsetRandomSampler
 import torchvision.datasets
-
 from parser import create_parser
 from datasets import cifar10
 from dataloader import NO_LABEL, relabel_dataset, TwoStreamBatchSampler
 import networks
 from networks import generator, discriminator
 from mnist.losses import *
-from losses import softmax_mse_loss, softmax_kl_loss, symmetric_mse_loss
-
 from utils import AverageMeterSet, assert_exactly_one, save_images
-
 from ramps import linear_rampup, cosine_rampdown, sigmoid_rampup
 
 def create_model(args, ema=False):
@@ -38,7 +33,7 @@ def create_model(args, ema=False):
         LOG.info(f'Let\'s use {torch.cuda.device_count()} GPUs!')
         model = nn.DataParallel(model)
 
-    if ema:  # # exponential moving average
+    if ema:  # exponential moving average
         for param in model.parameters():
             param.detach_()
     return model
@@ -86,23 +81,20 @@ def create_data_loaders(train_transformation,
     if args.exclude_unlabeled: # False
         sampler = SubsetRandomSampler(labeled_idxs)
         batch_sampler = BatchSampler(sampler, args.batch_size, drop_last=True)
-    elif args.labeled_batch_size: ## True
+    elif args.labeled_batch_size: # True
         batch_sampler = TwoStreamBatchSampler(
             unlabeled_idxs, labeled_idxs, args.batch_size, args.labeled_batch_size)
             # unlabeled: 97, labeled: 31 -> batch_size: 128 
     else:
         assert False, "labeled batch size {}".format(args.labeled_batch_size)
 
-    # tao train loader voi x labeled va batchsize - x unlabeled
     train_loader = torch.utils.data.DataLoader(dataset,
                                                batch_sampler=batch_sampler)
-
     eval_loader = torch.utils.data.DataLoader(
         torchvision.datasets.ImageFolder(evaldir, eval_transformation),
         batch_size=args.batch_size,
         shuffle=False,
         drop_last=False)
-
     return train_loader, eval_loader
 
 def save_checkpoint(state, dirpath):
@@ -237,7 +229,7 @@ def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D
     else:
         assert False, args.consistency_type
 
-    residual_logit_criterion =  symmetric_mse_loss
+    residual_logit_criterion = symmetric_mse_loss
 
     meters = AverageMeterSet()
 
@@ -313,12 +305,12 @@ def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D
             # C_fake_wei = C_fake_wei.view(-1, 1)
             # C_fake_wei = torch.zeros(args.generated_batch_size, 10).cuda().scatter_(1, C_fake_wei, 1)
             C_fake_wei = F.one_hot(C_fake_wei, 10)
-        # C_fake_loss = nll_loss_neg(C_fake_pred, C_fake_wei)
-        C_fake_loss = inverted_cross_entropy(C_fake_pred, C_fake_wei)
+        if args.mode == 'margingan':
+            C_fake_loss = nll_loss_neg(C_fake_pred, C_fake_wei)
+        else:
+            C_fake_loss = inverted_cross_entropy(C_fake_pred, C_fake_wei)
 
         loss = class_loss + consistency_loss + res_loss + generated_weight(epoch) * C_fake_loss
-        # loss = class_loss + consistency_loss + res_loss + C_fake_loss
-
 
         assert not (np.isnan(loss.item()) or loss.item() > 1e5), 'Loss explosion: {}'.format(loss.item())
         meters.update('loss', loss.item())
@@ -362,10 +354,14 @@ def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D
         D_fake = D(G_) # (32, 1)
         if args.mode == "rmcos":
             D_loss = d_loss_cosine_margin(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
-        elif args.mode == "rmlsoftmax":
+        elif args.mode == "rlmsoftmax":
             D_loss = d_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
         elif args.mode == "rmarc":
             D_loss = d_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
+        elif args.mode == 'margingan':
+            D_real_loss = BCELoss(D_real, torch.ones_like(D_real))
+            D_fake_loss = BCELoss(D_fake, torch.zeros_like(D_fake))
+            D_loss = D_real_loss + D_fake_loss
 
         D_loss.backward()
         D_optimizer.step()
@@ -382,22 +378,20 @@ def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D
             G_loss_D = g_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
         elif args.mode == "rmarc":
             G_loss_D = g_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
+        elif args.mode == 'margingan':
+            G_loss_D = BCELoss(D_fake, torch.ones_like(D_fake))
 
         C_fake_pred, _ = model(G_)
         C_fake_pred = F.log_softmax(C_fake_pred, dim=1)
-
         with torch.no_grad():
             C_fake_wei = torch.max(C_fake_pred, 1)[1]
-
-        G_loss_C = F.nll_loss(C_fake_pred, C_fake_wei)
-
+        G_loss_C = clf_loss(C_fake_pred, C_fake_wei)
         G_loss = G_loss_D + generated_weight(epoch) * G_loss_C
         if epoch <= 10:
             G_loss_D.backward()
         else:
             G_loss_D.backward(retain_graph=True)
             G_loss_C.backward()
-
         G_optimizer.step()
 
         if i % args.print_freq == 0:
@@ -418,20 +412,22 @@ if __name__ == "__main__":
     id_txt = args.labels.split("/")[-1].replace(".txt", "")
     if args.resume:
         checkpoint_path = args.resume
-        # date_time_now = datetime.now()
-        # date_time_now = "{:%Y-%m-%d_%H:%M:%S}".format(date_time_now)
     else:
         date_time_now = datetime.now()
         date_time_now = "{:%Y-%m-%d_%H:%M:%S}".format(date_time_now)
         if args.mode == "rmcos":
-            checkpoint_path = os.path.join("out_rmcos", args.dataset, num_labeled, id_txt, date_time_now)
-        elif args.mode == "rmlsoftmax":
-            checkpoint_path = os.path.join("out_rmlsoftmax", args.dataset, num_labeled, id_txt, date_time_now)
+            checkpoint_path = os.path.join("out_rmcos", 'num:'+str(num_labeled), 'm:'+str(args.m), id_txt,
+                                        date_time_now)
+        elif args.mode == "rlmsoftmax":
+            checkpoint_path = os.path.join("out_rlmsoftmax", 'num:'+str(num_labeled), 'm:'+str(args.m), id_txt,
+                                        date_time_now)
         elif args.mode == "rmarc":
-            checkpoint_path = os.path.join("out_rmarc", args.dataset, num_labeled, id_txt, date_time_now)
-
-        if not os.path.exists(checkpoint_path):
-            os.makedirs(checkpoint_path, exist_ok=True)
+            checkpoint_path = os.path.join("out_rmarc", 'num:'+str(num_labeled), 'm:'+str(args.m), id_txt,
+                                        date_time_now)
+        elif args.mode == "margingan":
+            checkpoint_path = os.path.join("out_margingan", 'num:'+str(num_labeled), id_txt,
+                                        date_time_now)   
+        os.makedirs(checkpoint_path, exist_ok=True)
 
     logging.basicConfig(
         level=logging.INFO,
@@ -477,8 +473,8 @@ if __name__ == "__main__":
     else:
         global_step, best_prec1 = 0, 0
 
-    is_best = False
     for epoch in range(args.start_epoch, args.epochs):
+        is_best = False
         start_time = time.time()
         # train for one epoch
         train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D, G_optimizer, D_optimizer, epoch)
@@ -494,9 +490,6 @@ if __name__ == "__main__":
             is_best = ema_prec1 > best_prec1
             best_prec1 = max(ema_prec1, best_prec1)
             LOG.info(" *Best Top1 {}".format(best_prec1.item()))
-
-        else:
-            is_best = False
 
         if args.checkpoint_epochs and (epoch + 1) % args.checkpoint_epochs == 0 and is_best:
             save_checkpoint({

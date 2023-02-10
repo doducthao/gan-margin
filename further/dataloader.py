@@ -57,8 +57,6 @@ class RandomTranslateWithReflect:
                                     ypad + ysize - ytranslation))
 
         return new_image
-
-
 class TransformTwice:
     def __init__(self, transform):
         self.transform = transform
@@ -91,8 +89,6 @@ def relabel_dataset(dataset, labels):
     print("num of labeled: " + str(len(labeled_idxs)) + '\n')
     print("num of unlabeled: " + str(len(unlabeled_idxs)) + '\n')
     return labeled_idxs, unlabeled_idxs
-
-
 class TwoStreamBatchSampler(Sampler):
     """Iterate two sets of indices
 
@@ -122,18 +118,15 @@ class TwoStreamBatchSampler(Sampler):
     def __len__(self):
         return len(self.primary_indices) // self.primary_batch_size
 
-
 def iterate_once(iterable):
     return np.random.permutation(iterable)
-
 
 def iterate_eternally(indices):
     def infinite_shuffles():
         while True:
             yield np.random.permutation(indices)
     return itertools.chain.from_iterable(infinite_shuffles())
-
-
+    
 def grouper(iterable, n):
     "Collect data into fixed-length chunks or blocks"
     # grouper('ABCDEFG', 3) --> ABC DEF"

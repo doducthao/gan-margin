@@ -8,5 +8,6 @@ further/data-local/workdir
 further/out_rmcos
 further/out_rlmsoftmax
 further/out_rmarc
+further/out_margingan
 **/__pycache__/**
 *.pyc

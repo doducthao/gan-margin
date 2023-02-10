@@ -93,8 +93,8 @@ if __name__ == '__main__':
         if args.mode == "rmcos":
             checkpoint_path = os.path.join("out_rmcos", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
                                         date_time_now)
-        elif args.mode == "rmlsoftmax":
-            checkpoint_path = os.path.join("out_rmlsoftmax", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
+        elif args.mode == "rlmsoftmax":
+            checkpoint_path = os.path.join("out_rlmsoftmax", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
                                         date_time_now)
         elif args.mode == "rmarc":
             checkpoint_path = os.path.join("out_rmarc", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
@@ -319,7 +319,7 @@ if __name__ == '__main__':
             D_fake = D(G_)
             if args.mode == "rmcos":
                 D_loss = d_loss_cosine_margin(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
-            elif args.mode == "rmlsoftmax":
+            elif args.mode == "rlmsoftmax":
                 D_loss = d_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
             elif  args.mode == "rmarc":
                 D_loss = d_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
@@ -345,7 +345,7 @@ if __name__ == '__main__':
 
             if args.mode == "rmcos":
                 G_loss_D = g_loss_cosine_margin(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
-            elif args.mode == "rmlsoftmax":
+            elif args.mode == "rlmsoftmax":
                 G_loss_D = g_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
             elif args.mode == "rmarc":
                 G_loss_D = g_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
