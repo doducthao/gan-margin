@@ -342,3 +342,59 @@ Traceback (most recent call last):
   File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/functional.py", line 2422, in batch_norm
     input, weight, bias, running_mean, running_var, training, momentum, eps, torch.backends.cudnn.enabled
 RuntimeError: CUDA out of memory. Tried to allocate 96.00 MiB (GPU 0; 10.92 GiB total capacity; 9.32 GiB already allocated; 4.25 MiB free; 10.07 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Traceback (most recent call last):
+  File "train.py", line 495, in <module>
+    prec1 = validate(args, eval_loader, model)
+  File "train.py", line 194, in validate
+    output, _ = model(input)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/asus/Documents/thaodd/rmcosssl/gan-margin/further/networks.py", line 218, in forward
+    x = self.layer1(x)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/asus/Documents/thaodd/rmcosssl/gan-margin/further/networks.py", line 307, in forward
+    b = self.bn_b2(b)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/batchnorm.py", line 179, in forward
+    self.eps,
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/functional.py", line 2422, in batch_norm
+    input, weight, bias, running_mean, running_var, training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: CUDA out of memory. Tried to allocate 96.00 MiB (GPU 0; 10.92 GiB total capacity; 9.32 GiB already allocated; 4.25 MiB free; 10.07 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+Traceback (most recent call last):
+  File "train.py", line 495, in <module>
+    prec1 = validate(args, eval_loader, model)
+  File "train.py", line 194, in validate
+    output, _ = model(input)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/asus/Documents/thaodd/rmcosssl/gan-margin/further/networks.py", line 218, in forward
+    x = self.layer1(x)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/asus/Documents/thaodd/rmcosssl/gan-margin/further/networks.py", line 307, in forward
+    b = self.bn_b2(b)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/modules/batchnorm.py", line 179, in forward
+    self.eps,
+  File "/home/asus/miniconda3/envs/mlenv/lib/python3.7/site-packages/torch/nn/functional.py", line 2422, in batch_norm
+    input, weight, bias, running_mean, running_var, training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: CUDA out of memory. Tried to allocate 96.00 MiB (GPU 0; 10.92 GiB total capacity; 9.32 GiB already allocated; 4.25 MiB free; 10.07 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
