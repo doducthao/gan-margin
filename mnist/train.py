@@ -80,27 +80,27 @@ def load_checkpoint(args, C, G, D, C_optimizer):
 
 if __name__ == '__main__':
     args = create_parser()
-    if args.num_labeled == 50:
+    if args.num_labels == 50:
         args.batch_size = 32 
-    id_txt = 'id:' + args.labeled_indexes.split("/")[-1].replace(".txt", "")
+    id_txt = 'id:' + args.labels.split("/")[-1].replace(".txt", "")
     if args.resume:
         checkpoint_path = args.resume
-        date_time_now = datetime.now()
+        date_time_now = datetime.now() # to clarify start training
         date_time_now = "{:%Y-%m-%d_%H:%M:%S}".format(date_time_now)
     else:
         date_time_now = datetime.now()
         date_time_now = "{:%Y-%m-%d_%H:%M:%S}".format(date_time_now)
         if args.mode == "rmcos":
-            checkpoint_path = os.path.join("out_rmcos", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
+            checkpoint_path = os.path.join("out_rmcos", 'num:'+str(args.num_labels), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
                                         date_time_now)
         elif args.mode == "rlmsoftmax":
-            checkpoint_path = os.path.join("out_rlmsoftmax", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
+            checkpoint_path = os.path.join("out_rlmsoftmax", 'num:'+str(args.num_labels), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
                                         date_time_now)
         elif args.mode == "rmarc":
-            checkpoint_path = os.path.join("out_rmarc", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
+            checkpoint_path = os.path.join("out_rmarc", 'num:'+str(args.num_labels), 'alpha:'+str(args.alpha), 'm:'+str(args.m), id_txt,
                                         date_time_now)
         elif args.mode == "margingan":
-            checkpoint_path = os.path.join("out_margingan", 'num:'+str(args.num_labeled), 'alpha:'+str(args.alpha), id_txt,
+            checkpoint_path = os.path.join("out_margingan", 'num:'+str(args.num_labels), 'alpha:'+str(args.alpha), id_txt,
                                         date_time_now)                 
 
     generated_images_dir = os.path.join(checkpoint_path, args.generated_images_dir)
@@ -198,15 +198,15 @@ if __name__ == '__main__':
         # warms up for C
         if not args.resume:
             if epoch == 1:
-                if args.num_labeled == 50:
+                if args.num_labels == 50:
                     gate = 0.6
-                elif args.num_labeled == 100:
+                elif args.num_labels == 100:
                     gate = 0.8
-                elif args.num_labeled == 600:
+                elif args.num_labels == 600:
                     gate = 0.90
-                elif args.num_labeled == 1000:
+                elif args.num_labels == 1000:
                     gate = 0.93
-                elif args.num_labeled == 3000:
+                elif args.num_labels == 3000:
                     gate = 0.95
 
                 LOG.info(f'Training C to archieve at least {gate} accuracy')

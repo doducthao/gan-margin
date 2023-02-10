@@ -5,7 +5,6 @@ from urllib.parse import ParseResult
 def create_parser():
     description = 'Relativistic Margin Cosine - Relativistic Large Margin Softmax GAN-SSL'
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument('--dataset', type=str, default='mnist')
     parser.add_argument('--device', type=str, default='cuda')
 
     # save results
@@ -15,7 +14,7 @@ def create_parser():
     parser.add_argument('--benchmark_mode', type=bool, default=True)
     parser.add_argument('--mode', type=str, default='rmcos', choices=['rmcos', 'rlmsoftmax','rmarc', 'margingan'], required=True)
     parser.add_argument('--batch_size', type=int, default=64)
-    parser.add_argument('--input_size', type=int, default=28)
+    parser.add_argument('--input_size', type=int, default=28) # mnist
     parser.add_argument('--z_dim', type=int, default=64)
 
     parser.add_argument('--lrC', type=float, default=0.1)
@@ -42,7 +41,7 @@ def create_parser():
     # resume
     parser.add_argument('--resume', type=str, default='')
     # labels
-    parser.add_argument('--args.labels', type=str, default='')
+    parser.add_argument('--labels', type=str, default='')
 
     return parser.parse_args()
 

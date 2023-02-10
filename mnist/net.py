@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import utils
 
 class generator(nn.Module):
     def __init__(self, input_dim=100, output_dim=1, input_size=28):
