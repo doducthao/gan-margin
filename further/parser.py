@@ -11,6 +11,7 @@ def create_parser():
     parser.add_argument('--arch', '-a', default='cifar_shakeshake26')
     parser.add_argument('--mode', type=str, default='rmcos', choices=['rmcos', 'rlmsoftmax','rmarc', 'margingan'], required=True)
 
+    parser.add_argument('--alpha', default=0.9, type=float, required=False)
     parser.add_argument("--m", type=float, default=0.15)
     parser.add_argument("--s", type=float, default=10.0)
     

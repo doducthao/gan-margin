@@ -388,7 +388,12 @@ def train(args, checkpoint_path, train_loader, model, ema_model, optimizer, G, D
         with torch.no_grad():
             C_fake_wei = torch.max(C_fake_pred, 1)[1]
         G_loss_C = clf_loss(C_fake_pred, C_fake_wei)
-        G_loss = G_loss_D + generated_weight(epoch) * G_loss_C
+
+        if args.alpha:
+            G_loss = args.alpha * G_loss_D + (1-args.alpha) * G_loss_C # empiricize the interpolation of G_D and G_C
+        else:
+            G_loss = G_loss_D + generated_weight(epoch) * G_loss_C
+
         if epoch <= 10:
             G_loss_D.backward()
         else:
