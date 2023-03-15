@@ -311,7 +311,7 @@ if __name__ == '__main__':
             D_fake = D(G_)
             if args.mode == "rmcos":
                 D_loss = d_loss_cosine_margin(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
-            elif args.mode == "rlmsoftmax":
+            elif args.mode == "rmlsoftmax":
                 D_loss = d_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
             elif  args.mode == "rmarc":
                 D_loss = d_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_real), args.m, args.s)
@@ -337,7 +337,7 @@ if __name__ == '__main__':
 
             if args.mode == "rmcos":
                 G_loss_D = g_loss_cosine_margin(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
-            elif args.mode == "rlmsoftmax":
+            elif args.mode == "rmlsoftmax":
                 G_loss_D = g_loss_multi_angular_2k(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
             elif args.mode == "rmarc":
                 G_loss_D = g_loss_additive_angular_arccos(D_real, D_fake, torch.ones_like(D_fake), args.m, args.s)
