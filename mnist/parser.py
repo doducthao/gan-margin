@@ -12,7 +12,7 @@ def create_parser():
     parser.add_argument('--generated_images_dir', type=str, default='generated_images')
 
     parser.add_argument('--benchmark_mode', type=bool, default=True)
-    parser.add_argument('--mode', type=str, default='rmcos', choices=['rmcos', 'rlmsoftmax','rmarc', 'margingan'], required=True)
+    parser.add_argument('--mode', type=str, default='rmcos', choices=['rmcos', 'rmlsoftmax','rmarc', 'margingan'], required=True)
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--input_size', type=int, default=28) # mnist
     parser.add_argument('--z_dim', type=int, default=64)
