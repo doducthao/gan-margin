@@ -428,7 +428,7 @@ if __name__ == "__main__":
             checkpoint_path = os.path.join("out_rmcos", 'num:'+str(num_labels), 'm:'+str(args.m), 'id:'+id_txt,
                                         date_time_now)
         elif args.mode == "rmlsoftmax":
-            checkpoint_path = os.path.join("out_rlmsoftmax", 'num:'+str(num_labels), 'm:'+str(args.m), 'id:'+id_txt,
+            checkpoint_path = os.path.join("out_rmlsoftmax", 'num:'+str(num_labels), 'm:'+str(args.m), 'id:'+id_txt,
                                         date_time_now)
         elif args.mode == "rmarc":
             checkpoint_path = os.path.join("out_rmarc", 'num:'+str(num_labels), 'm:'+str(args.m), 'id:'+id_txt,
