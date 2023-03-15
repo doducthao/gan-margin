@@ -157,16 +157,8 @@ if __name__ == '__main__':
     labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
     LOG.info(f'Labeled size: {len(labeled_indexes)}, Unlabeled size: {50000 - len(labeled_indexes)}')
 
-    train_hist = {}
-    train_hist['D_loss'] = []
-    train_hist['G_loss'] = []
-    train_hist['C_loss'] = []
-    train_hist['test_loss'] = []
-
-    train_hist['per_epoch_time'] = []
-    train_hist['total_time'] = []
-
-    train_hist['test_accuracy'] = []
+    train_hist = {'D_loss': [], 'G_loss': [], 'C_loss': [], 'test_loss': [], 'per_epoch_time': [], 'total_time': [],
+                  'test_accuracy': []}
 
     labeled_steps = len(labeled_loader.dataset) // args.batch_size
     unlabeled_steps = len(unlabeled_loader.dataset) // args.batch_size
