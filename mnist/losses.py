@@ -22,7 +22,7 @@ def d_loss_cosine_margin(real, fake, y, m=0.15, s=10.0):
     return BCEWithLogitsLoss(s*(real - fake) + 1e-6 , y)
 # rmcos
 def g_loss_cosine_margin(real, fake, y, m=0.15, s=10.0):
-    fake = fake + m
+    fake = fake - m
     return BCEWithLogitsLoss(s*(fake - real) + 1e-6, y)
 
 def calculate_phi_theta(cos_theta, m=4): # m: margin
@@ -63,8 +63,8 @@ def d_loss_multi_angular_2k(real, fake, y, m=4, s = 10.0):
 # rmlsoftmax
 def g_loss_multi_angular_2k(real, fake, y, m=4, s = 10.0):
     m = int(m)
-    # fake = calculate_phi_theta(fake, m)
-    real = calculate_phi_theta(real, m)
+    fake = calculate_phi_theta(fake, m)
+    # real = calculate_phi_theta(real, m)
     # return BCEWithLogitsLoss(s * (fake - torch.mean(real)) + 1e-6, y)
     return BCEWithLogitsLoss(s * (fake - real) + 1e-6, y)
 # rmarc
@@ -77,13 +77,13 @@ def d_loss_additive_angular_arccos(real, fake, y, m=2.35, s = 10.0):
 
 # rmarc
 def g_loss_additive_angular_arccos(real, fake, y, m=2.35, s = 10.0):
-    # fake.arccos_()
-    # fake = fake + m
-    # fake.cos_()
+    fake.arccos_()
+    fake = fake + m
+    fake.cos_()
     # return BCEWithLogitsLoss(s * (fake - torch.mean(real)) + 1e-6, y)
-    real.arccos_()
-    real = real + m
-    real.cos_()
+    # real.arccos_()
+    # real = real + m
+    # real.cos_()
     return BCEWithLogitsLoss(s * (fake - real) + 1e-6, y)
 
 def softmax_mse_loss(input_logits, target_logits):
