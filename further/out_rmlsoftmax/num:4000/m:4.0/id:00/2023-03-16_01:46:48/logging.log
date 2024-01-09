@@ -1,0 +1,4 @@
+INFO:main:Namespace(device='cuda', train_subdir='train+val', eval_subdir='test', labels='data-local/labels/cifar10/4000_balanced_labels/00.txt', exclude_unlabeled=False, arch='cifar_shakeshake26', mode='rmlsoftmax', alpha=0.9, m=4.0, s=10.0, lrG=0.0002, lrD=0.0002, beta1=0.5, beta2=0.999, workers=18, epochs=300, start_epoch=0, input_size=32, batch_size=256, labeled_batch_size=256, generated_batch_size=64, z_dim=100, lr=0.05, initial_lr=0.0, lr_rampup=0, lr_rampdown_epochs=250, momentum=0.9, nesterov=True, weight_decay=0.0002, ema_decay=0.99, consistency=100.0, consistency_type='mse', consistency_rampup=5, logit_distance_cost=0.01, checkpoint_epochs=1, evaluation_epochs=1, print_freq=20, resume='', evaluate=True, pretrained=False)
+INFO:main:--------------------------------------------------
+INFO:main:Start training at 2023-03-16_01:46:48
+INFO:main:File training: data-local/labels/cifar10/4000_balanced_labels/00.txt

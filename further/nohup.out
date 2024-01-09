@@ -590,3 +590,135 @@ num of labeled: 1000
 
 num of unlabeled: 49000
 
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/further/train.py", line 458, in <module>
+    train_loader, eval_loader = create_data_loaders(train_transformation,
+  File "/home/soe/dungtemp/gan-margin/further/train.py", line 76, in create_data_loaders
+    dataset = torchvision.datasets.ImageFolder(traindir, train_transformation)
+  File "/home/soe/.local/lib/python3.10/site-packages/torchvision/datasets/folder.py", line 309, in __init__
+    super().__init__(
+  File "/home/soe/.local/lib/python3.10/site-packages/torchvision/datasets/folder.py", line 144, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+  File "/home/soe/.local/lib/python3.10/site-packages/torchvision/datasets/folder.py", line 218, in find_classes
+    return find_classes(directory)
+  File "/home/soe/.local/lib/python3.10/site-packages/torchvision/datasets/folder.py", line 40, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+FileNotFoundError: [Errno 2] No such file or directory: 'data-local/images/cifar/cifar10/by-image/train+val'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/further/train.py", line 458, in <module>
+    train_loader, eval_loader = create_data_loaders(train_transformation,
+  File "/home/soe/dungtemp/gan-margin/further/train.py", line 76, in create_data_loaders
+    dataset = torchvision.datasets.ImageFolder(traindir, train_transformation)
+  File "/home/soe/.local/lib/python3.10/site-packages/torchvision/datasets/folder.py", line 309, in __init__
+    super().__init__(
+  File "/home/soe/.local/lib/python3.10/site-packages/torchvision/datasets/folder.py", line 144, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+  File "/home/soe/.local/lib/python3.10/site-packages/torchvision/datasets/folder.py", line 218, in find_classes
+    return find_classes(directory)
+  File "/home/soe/.local/lib/python3.10/site-packages/torchvision/datasets/folder.py", line 40, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+FileNotFoundError: [Errno 2] No such file or directory: 'data-local/images/cifar/cifar10/by-image/train+val'
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 4000
+
+num of unlabeled: 46000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+
+num of labeled: 1000
+
+num of unlabeled: 49000
+

@@ -839,3 +839,1415 @@ RuntimeError: CUDA error: device-side assert triggered
 CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
 For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
 Terminated
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to data/mnist/MNIST/raw/train-images-idx3-ubyte.gz
+  0%|          | 0/9912422 [00:00<?, ?it/s]  2%|▏         | 196608/9912422 [00:00<00:05, 1810328.77it/s] 10%|▉         | 950272/9912422 [00:00<00:01, 5061631.11it/s] 49%|████▉     | 4849664/9912422 [00:00<00:00, 20236404.43it/s] 70%|██████▉   | 6914048/9912422 [00:00<00:00, 19800058.28it/s]100%|██████████| 9912422/9912422 [00:00<00:00, 19629406.56it/s]
+Extracting data/mnist/MNIST/raw/train-images-idx3-ubyte.gz to data/mnist/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to data/mnist/MNIST/raw/train-labels-idx1-ubyte.gz
+  0%|          | 0/28881 [00:00<?, ?it/s]100%|██████████| 28881/28881 [00:00<00:00, 5816281.45it/s]
+Extracting data/mnist/MNIST/raw/train-labels-idx1-ubyte.gz to data/mnist/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to data/mnist/MNIST/raw/t10k-images-idx3-ubyte.gz
+  0%|          | 0/1648877 [00:00<?, ?it/s]  8%|▊         | 131072/1648877 [00:00<00:01, 1227119.82it/s] 32%|███▏      | 524288/1648877 [00:00<00:00, 2749446.00it/s]100%|██████████| 1648877/1648877 [00:00<00:00, 5596368.45it/s]
+Extracting data/mnist/MNIST/raw/t10k-images-idx3-ubyte.gz to data/mnist/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to data/mnist/MNIST/raw/t10k-labels-idx1-ubyte.gz
+  0%|          | 0/4542 [00:00<?, ?it/s]100%|██████████| 4542/4542 [00:00<00:00, 39523918.61it/s]
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Extracting data/mnist/MNIST/raw/t10k-labels-idx1-ubyte.gz to data/mnist/MNIST/raw
+
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [0,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [1,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [2,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [3,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [4,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [5,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [6,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [7,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [8,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [12,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [13,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [14,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [15,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [16,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [17,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [18,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [19,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [20,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [21,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [22,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [23,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [24,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [25,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [26,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [33,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [34,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [35,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [36,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [37,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [38,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [39,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [40,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [41,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [42,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [43,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [44,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [45,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [46,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [47,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [48,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [49,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [50,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [54,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [55,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [56,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [57,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [58,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [59,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [60,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [61,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [62,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+../aten/src/ATen/native/cuda/Loss.cu:92: operator(): block: [0,0,0], thread: [63,0,0] Assertion `input_val >= zero && input_val <= one` failed.
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 333, in <module>
+    D_loss.backward()
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/soe/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+Terminated
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rlmsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: argument --mode: invalid choice: 'rmlsoftmax' (choose from 'rmcos', 'rlmsoftmax', 'rmarc', 'margingan')
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rlmsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: argument --mode: invalid choice: 'rmlsoftmax' (choose from 'rmcos', 'rlmsoftmax', 'rmarc', 'margingan')
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rlmsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: argument --mode: invalid choice: 'rmlsoftmax' (choose from 'rmcos', 'rlmsoftmax', 'rmarc', 'margingan')
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rlmsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: argument --mode: invalid choice: 'rmlsoftmax' (choose from 'rmcos', 'rlmsoftmax', 'rmarc', 'margingan')
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rlmsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: argument --mode: invalid choice: 'rmlsoftmax' (choose from 'rmcos', 'rlmsoftmax', 'rmarc', 'margingan')
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/0.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/1.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/2.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/3.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/4.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labels/1000/0.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labels/1000/1.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labels/1000/2.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labels/1000/3.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labels/1000/4.txt
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 332, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 332, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 332, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 332, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 332, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 324, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 324, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 324, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 324, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 324, in <module>
+    train_hist['D_loss'].append(D_loss.item())
+NameError: name 'D_loss' is not defined. Did you mean: 'C_loss'?
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 100 --labeled_indexes uniform_labeled/100/0.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 100 --labeled_indexes uniform_labeled/100/1.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 100 --labeled_indexes uniform_labeled/100/2.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 100 --labeled_indexes uniform_labeled/100/3.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 100 --labeled_indexes uniform_labeled/100/4.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 600 --labeled_indexes uniform_labeled/600/0.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 600 --labeled_indexes uniform_labeled/600/1.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 600 --labeled_indexes uniform_labeled/600/2.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 600 --labeled_indexes uniform_labeled/600/3.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 600 --labeled_indexes uniform_labeled/600/4.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/0.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/1.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/2.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/3.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 1000 --labeled_indexes uniform_labeled/1000/4.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 3000 --labeled_indexes uniform_labeled/3000/0.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 3000 --labeled_indexes uniform_labeled/3000/1.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 3000 --labeled_indexes uniform_labeled/3000/2.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 3000 --labeled_indexes uniform_labeled/3000/3.txt
+usage: train.py [-h] [--device DEVICE] [--acc_time ACC_TIME]
+                [--generated_images_dir GENERATED_IMAGES_DIR]
+                [--benchmark_mode BENCHMARK_MODE] --mode
+                {rmcos,rmlsoftmax,rmarc,margingan} [--batch_size BATCH_SIZE]
+                [--input_size INPUT_SIZE] [--z_dim Z_DIM] [--lrC LRC]
+                [--lrD LRD] [--lrG LRG] [--momentum MOMENTUM] [--beta1 BETA1]
+                [--beta2 BETA2] [--scheduler SCHEDULER] [--m M] [--s S]
+                [--index INDEX] [--num_epoch NUM_EPOCH]
+                [--num_labels NUM_LABELS] [--alpha ALPHA]
+                [--checkpoint_epochs CHECKPOINT_EPOCHS]
+                [--num_samples NUM_SAMPLES] [--resume RESUME]
+                [--labels LABELS]
+train.py: error: unrecognized arguments: --num_labeled 3000 --labeled_indexes uniform_labeled/3000/4.txt
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/100/0.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/100/1.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/100/2.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/100/3.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/100/4.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/600/0.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/600/1.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/600/2.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/600/3.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/600/4.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/1000/0.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/1000/1.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/1000/2.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/1000/3.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/1000/4.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/3000/0.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/3000/1.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/3000/2.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/3000/3.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 157, in <module>
+    labeled_loader, unlabeled_loader, test_loader, labeled_indexes = dataloader_given_indexes(args)
+  File "/home/soe/dungtemp/gan-margin/mnist/dataloader.py", line 76, in dataloader_given_indexes
+    with open(args.labels, mode='r', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'uniform_labeled/3000/4.txt'
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 308, in <module>
+    D_real = (D_labeled + D_unlabeled)/2 
+RuntimeError: The size of tensor a (100) must match the size of tensor b (128) at non-singleton dimension 0
+/home/soe/.local/lib/python3.10/site-packages/imageio/core/util.py:72: RuntimeWarning: All-NaN slice encountered
+  if dtype_str1.startswith("float") and np.nanmin(im) >= 0 and np.nanmax(im) <= 1:
+/home/soe/.local/lib/python3.10/site-packages/imageio/core/util.py:93: RuntimeWarning: All-NaN slice encountered
+  mi = np.nanmin(im)
+/home/soe/.local/lib/python3.10/site-packages/imageio/core/util.py:94: RuntimeWarning: All-NaN slice encountered
+  ma = np.nanmax(im)
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 414, in <module>
+    visualize_generated_images(epoch, sample_z_, args)
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 56, in visualize_generated_images
+    save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
+  File "/home/soe/dungtemp/gan-margin/mnist/utils.py", line 17, in save_images
+    return imsave(images, size, image_path)
+  File "/home/soe/dungtemp/gan-margin/mnist/utils.py", line 22, in imsave
+    return imageio.imwrite(path, image)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/v2.py", line 264, in imwrite
+    return file.write(im, **kwargs)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/core/legacy_plugin_wrapper.py", line 253, in write
+    writer.append_data(image, metadata)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/core/format.py", line 590, in append_data
+    return self._append_data(im, total_meta)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/plugins/pillow_legacy.py", line 457, in _append_data
+    im = image_as_uint(im, bitdepth=8)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/core/util.py", line 96, in image_as_uint
+    raise ValueError("Minimum image value is not finite")
+ValueError: Minimum image value is not finite
+/home/soe/.local/lib/python3.10/site-packages/imageio/core/util.py:72: RuntimeWarning: All-NaN slice encountered
+  if dtype_str1.startswith("float") and np.nanmin(im) >= 0 and np.nanmax(im) <= 1:
+/home/soe/.local/lib/python3.10/site-packages/imageio/core/util.py:93: RuntimeWarning: All-NaN slice encountered
+  mi = np.nanmin(im)
+/home/soe/.local/lib/python3.10/site-packages/imageio/core/util.py:94: RuntimeWarning: All-NaN slice encountered
+  ma = np.nanmax(im)
+Traceback (most recent call last):
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 414, in <module>
+    visualize_generated_images(epoch, sample_z_, args)
+  File "/home/soe/dungtemp/gan-margin/mnist/train.py", line 56, in visualize_generated_images
+    save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
+  File "/home/soe/dungtemp/gan-margin/mnist/utils.py", line 17, in save_images
+    return imsave(images, size, image_path)
+  File "/home/soe/dungtemp/gan-margin/mnist/utils.py", line 22, in imsave
+    return imageio.imwrite(path, image)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/v2.py", line 264, in imwrite
+    return file.write(im, **kwargs)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/core/legacy_plugin_wrapper.py", line 253, in write
+    writer.append_data(image, metadata)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/core/format.py", line 590, in append_data
+    return self._append_data(im, total_meta)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/plugins/pillow_legacy.py", line 457, in _append_data
+    im = image_as_uint(im, bitdepth=8)
+  File "/home/soe/.local/lib/python3.10/site-packages/imageio/core/util.py", line 96, in image_as_uint
+    raise ValueError("Minimum image value is not finite")
+ValueError: Minimum image value is not finite

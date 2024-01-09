@@ -1,0 +1,708 @@
+INFO:main:Start training at 2023-03-15_08:22:00
+INFO:main:args: Namespace(device='cuda', acc_time='acc_time', generated_images_dir='generated_images', benchmark_mode=True, mode='rmlsoftmax', batch_size=64, input_size=28, z_dim=64, lrC=0.1, lrD=0.0002, lrG=0.0002, momentum=0.5, beta1=0.5, beta2=0.999, scheduler=False, m=4.0, s=10.0, index=1, num_epoch=40, num_labels=1000, alpha=0.9, checkpoint_epochs=1, num_samples=100, resume='', labels='uniform_labels/1000/3.txt')
+INFO:main:Let's use 2 GPUs!
+INFO:main:Labeled size: 1000, Unlabeled size: 49000
+INFO:main:Epoch: 1  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Training C to archieve at least 0.93 accuracy
+INFO:main:Test loss: 2.3058 || Accuracy: 2436/10000 (24%)
+
+INFO:main:Test loss: 2.2124 || Accuracy: 3120/10000 (31%)
+
+INFO:main:Test loss: 0.9104 || Accuracy: 7300/10000 (73%)
+
+INFO:main:Test loss: 0.5829 || Accuracy: 8157/10000 (82%)
+
+INFO:main:Test loss: 0.3271 || Accuracy: 8965/10000 (90%)
+
+INFO:main:Test loss: 0.3242 || Accuracy: 8931/10000 (89%)
+
+INFO:main:Test loss: 0.3059 || Accuracy: 9100/10000 (91%)
+
+INFO:main:Test loss: 0.2931 || Accuracy: 9104/10000 (91%)
+
+INFO:main:Test loss: 0.3057 || Accuracy: 9108/10000 (91%)
+
+INFO:main:Test loss: 0.2597 || Accuracy: 9274/10000 (93%)
+
+INFO:main:Test loss: 0.2518 || Accuracy: 9318/10000 (93%)
+
+INFO:main:Epoch:   1 || 100/921 || D_loss: 0.0000, G_loss: 9.6320, C_loss: 0.1646
+INFO:main:Epoch:   1 || 200/921 || D_loss: 0.0000, G_loss: 9.7923, C_loss: 0.1703
+INFO:main:Epoch:   1 || 300/921 || D_loss: 0.0000, G_loss: 9.8534, C_loss: 0.1636
+INFO:main:Epoch:   1 || 400/921 || D_loss: 0.0000, G_loss: 9.8659, C_loss: 0.1652
+INFO:main:Epoch:   1 || 500/921 || D_loss: 0.0000, G_loss: 9.9144, C_loss: 0.2032
+INFO:main:Epoch:   1 || 600/921 || D_loss: 0.0000, G_loss: 9.9015, C_loss: 0.2233
+INFO:main:Epoch:   1 || 700/921 || D_loss: 28.0163, G_loss: 1.2863, C_loss: 0.1935
+INFO:main:Epoch:   1 || 800/921 || D_loss: 23.5179, G_loss: 0.1622, C_loss: 0.2481
+INFO:main:Epoch:   1 || 900/921 || D_loss: 23.1230, G_loss: 0.7860, C_loss: 0.1715
+INFO:main:
+Pseudo tag || Accuracy: 56515/58944 (96%)
+
+INFO:main:
+Test set || Test loss: 0.0657 || Accuracy: 9834/10000 (98.3400%) || Best accuraccy: 0.9834
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 2  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:   2 || 100/921 || D_loss: 22.2668, G_loss: 0.1635, C_loss: 0.1620
+INFO:main:Epoch:   2 || 200/921 || D_loss: 28.6852, G_loss: 0.5022, C_loss: 0.1739
+INFO:main:Epoch:   2 || 300/921 || D_loss: 17.2748, G_loss: 0.5087, C_loss: 0.1880
+INFO:main:Epoch:   2 || 400/921 || D_loss: 27.3161, G_loss: 0.9363, C_loss: 0.1995
+INFO:main:Epoch:   2 || 500/921 || D_loss: 27.6160, G_loss: 0.5479, C_loss: 0.1992
+INFO:main:Epoch:   2 || 600/921 || D_loss: 24.1432, G_loss: 0.0516, C_loss: 0.2148
+INFO:main:Epoch:   2 || 700/921 || D_loss: 27.6515, G_loss: 0.3215, C_loss: 0.1753
+INFO:main:Epoch:   2 || 800/921 || D_loss: 27.1701, G_loss: 0.0573, C_loss: 0.2162
+INFO:main:Epoch:   2 || 900/921 || D_loss: 19.5523, G_loss: 0.5428, C_loss: 0.1704
+INFO:main:
+Pseudo tag || Accuracy: 57612/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0601 || Accuracy: 9862/10000 (98.6200%) || Best accuraccy: 0.9862
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 3  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:   3 || 100/921 || D_loss: 25.5189, G_loss: 0.6339, C_loss: 0.1849
+INFO:main:Epoch:   3 || 200/921 || D_loss: 23.3319, G_loss: 0.5473, C_loss: 0.1803
+INFO:main:Epoch:   3 || 300/921 || D_loss: 17.9646, G_loss: 0.0570, C_loss: 0.1744
+INFO:main:Epoch:   3 || 400/921 || D_loss: 26.6619, G_loss: 0.3058, C_loss: 0.1782
+INFO:main:Epoch:   3 || 500/921 || D_loss: 26.4921, G_loss: 0.5404, C_loss: 0.1777
+INFO:main:Epoch:   3 || 600/921 || D_loss: 18.2730, G_loss: 0.3107, C_loss: 0.1873
+INFO:main:Epoch:   3 || 700/921 || D_loss: 18.0959, G_loss: 0.5401, C_loss: 0.2086
+INFO:main:Epoch:   3 || 800/921 || D_loss: 24.3978, G_loss: 0.0428, C_loss: 0.1908
+INFO:main:Epoch:   3 || 900/921 || D_loss: 19.2900, G_loss: 0.2993, C_loss: 0.1757
+INFO:main:
+Pseudo tag || Accuracy: 57841/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0817 || Accuracy: 9838/10000 (98.3800%) || Best accuraccy: 0.9862
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 4  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:   4 || 100/921 || D_loss: 28.0148, G_loss: 0.5407, C_loss: 0.1809
+INFO:main:Epoch:   4 || 200/921 || D_loss: 19.0757, G_loss: 0.4172, C_loss: 0.1737
+INFO:main:Epoch:   4 || 300/921 || D_loss: 29.7724, G_loss: 0.3040, C_loss: 0.1791
+INFO:main:Epoch:   4 || 400/921 || D_loss: 19.9720, G_loss: 0.0707, C_loss: 0.1803
+INFO:main:Epoch:   4 || 500/921 || D_loss: 17.8360, G_loss: 0.4879, C_loss: 0.2250
+INFO:main:Epoch:   4 || 600/921 || D_loss: 20.4531, G_loss: 0.0530, C_loss: 0.1838
+INFO:main:Epoch:   4 || 700/921 || D_loss: 22.5557, G_loss: 1.0180, C_loss: 0.2032
+INFO:main:Epoch:   4 || 800/921 || D_loss: 26.9886, G_loss: 0.1585, C_loss: 0.1907
+INFO:main:Epoch:   4 || 900/921 || D_loss: 27.3061, G_loss: 0.5357, C_loss: 0.2224
+INFO:main:
+Pseudo tag || Accuracy: 57975/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1016 || Accuracy: 9827/10000 (98.2700%) || Best accuraccy: 0.9862
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 5  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:   5 || 100/921 || D_loss: 24.1702, G_loss: 0.8671, C_loss: 0.1981
+INFO:main:Epoch:   5 || 200/921 || D_loss: 27.4856, G_loss: 0.3023, C_loss: 0.2071
+INFO:main:Epoch:   5 || 300/921 || D_loss: 17.9735, G_loss: 0.2907, C_loss: 0.1978
+INFO:main:Epoch:   5 || 400/921 || D_loss: 26.5175, G_loss: 0.8973, C_loss: 0.1917
+INFO:main:Epoch:   5 || 500/921 || D_loss: 23.2927, G_loss: 0.2885, C_loss: 0.2340
+INFO:main:Epoch:   5 || 600/921 || D_loss: 24.7091, G_loss: 0.2964, C_loss: 0.2108
+INFO:main:Epoch:   5 || 700/921 || D_loss: 26.4561, G_loss: 0.5659, C_loss: 0.1627
+INFO:main:Epoch:   5 || 800/921 || D_loss: 21.3648, G_loss: 0.0437, C_loss: 0.1723
+INFO:main:Epoch:   5 || 900/921 || D_loss: 25.8060, G_loss: 0.5348, C_loss: 0.1713
+INFO:main:
+Pseudo tag || Accuracy: 57979/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0806 || Accuracy: 9869/10000 (98.6900%) || Best accuraccy: 0.9869
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 6  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:   6 || 100/921 || D_loss: 28.6583, G_loss: 0.0573, C_loss: 0.1800
+INFO:main:Epoch:   6 || 200/921 || D_loss: 18.2957, G_loss: 0.3806, C_loss: 0.1915
+INFO:main:Epoch:   6 || 300/921 || D_loss: 14.1842, G_loss: 0.3062, C_loss: 0.1693
+INFO:main:Epoch:   6 || 400/921 || D_loss: 19.8386, G_loss: 0.0489, C_loss: 0.2002
+INFO:main:Epoch:   6 || 500/921 || D_loss: 22.4353, G_loss: 0.2939, C_loss: 0.2194
+INFO:main:Epoch:   6 || 600/921 || D_loss: 16.2964, G_loss: 0.4007, C_loss: 0.1717
+INFO:main:Epoch:   6 || 700/921 || D_loss: 26.3015, G_loss: 0.3857, C_loss: 0.1932
+INFO:main:Epoch:   6 || 800/921 || D_loss: 20.0615, G_loss: 0.0468, C_loss: 0.2165
+INFO:main:Epoch:   6 || 900/921 || D_loss: 19.1811, G_loss: 0.5444, C_loss: 0.1468
+INFO:main:
+Pseudo tag || Accuracy: 58055/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0578 || Accuracy: 9884/10000 (98.8400%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 7  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:   7 || 100/921 || D_loss: 21.8011, G_loss: 0.5698, C_loss: 0.1622
+INFO:main:Epoch:   7 || 200/921 || D_loss: 17.8558, G_loss: 0.0714, C_loss: 0.2085
+INFO:main:Epoch:   7 || 300/921 || D_loss: 15.7616, G_loss: 0.7901, C_loss: 0.1934
+INFO:main:Epoch:   7 || 400/921 || D_loss: 28.6434, G_loss: 0.6414, C_loss: 0.1601
+INFO:main:Epoch:   7 || 500/921 || D_loss: 25.6951, G_loss: 0.6541, C_loss: 0.1487
+INFO:main:Epoch:   7 || 600/921 || D_loss: 20.0963, G_loss: 0.5467, C_loss: 0.2006
+INFO:main:Epoch:   7 || 700/921 || D_loss: 17.4529, G_loss: 0.2998, C_loss: 0.2106
+INFO:main:Epoch:   7 || 800/921 || D_loss: 24.0280, G_loss: 0.9142, C_loss: 0.1793
+INFO:main:Epoch:   7 || 900/921 || D_loss: 19.2346, G_loss: 0.5570, C_loss: 0.2199
+INFO:main:
+Pseudo tag || Accuracy: 57988/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1046 || Accuracy: 9763/10000 (97.6300%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 8  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:   8 || 100/921 || D_loss: 23.8107, G_loss: 0.3062, C_loss: 0.1716
+INFO:main:Epoch:   8 || 200/921 || D_loss: 17.7539, G_loss: 0.2985, C_loss: 0.1952
+INFO:main:Epoch:   8 || 300/921 || D_loss: 18.4348, G_loss: 0.1508, C_loss: 0.1877
+INFO:main:Epoch:   8 || 400/921 || D_loss: 21.8726, G_loss: 0.2640, C_loss: 0.1679
+INFO:main:Epoch:   8 || 500/921 || D_loss: 22.0937, G_loss: 0.2343, C_loss: 0.2249
+INFO:main:Epoch:   8 || 600/921 || D_loss: 27.0082, G_loss: 0.2694, C_loss: 0.1629
+INFO:main:Epoch:   8 || 700/921 || D_loss: 22.4499, G_loss: 1.0783, C_loss: 0.1624
+INFO:main:Epoch:   8 || 800/921 || D_loss: 16.7085, G_loss: 0.0498, C_loss: 0.1653
+INFO:main:Epoch:   8 || 900/921 || D_loss: 20.6089, G_loss: 0.3011, C_loss: 0.1918
+INFO:main:
+Pseudo tag || Accuracy: 58017/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0993 || Accuracy: 9832/10000 (98.3200%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 9  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:   9 || 100/921 || D_loss: 16.7357, G_loss: 0.3057, C_loss: 0.1827
+INFO:main:Epoch:   9 || 200/921 || D_loss: 19.7174, G_loss: 0.0592, C_loss: 0.1682
+INFO:main:Epoch:   9 || 300/921 || D_loss: 21.9336, G_loss: 0.0495, C_loss: 0.1639
+INFO:main:Epoch:   9 || 400/921 || D_loss: 24.3571, G_loss: 1.0173, C_loss: 0.2105
+INFO:main:Epoch:   9 || 500/921 || D_loss: 21.2566, G_loss: 0.7737, C_loss: 0.1948
+INFO:main:Epoch:   9 || 600/921 || D_loss: 14.9737, G_loss: 0.0615, C_loss: 0.1852
+INFO:main:Epoch:   9 || 700/921 || D_loss: 15.9139, G_loss: 0.2905, C_loss: 0.2305
+INFO:main:Epoch:   9 || 800/921 || D_loss: 23.0735, G_loss: 1.0539, C_loss: 0.2016
+INFO:main:Epoch:   9 || 900/921 || D_loss: 16.1469, G_loss: 0.2913, C_loss: 0.1910
+INFO:main:
+Pseudo tag || Accuracy: 57996/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0922 || Accuracy: 9849/10000 (98.4900%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 10  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  10 || 100/921 || D_loss: 25.4274, G_loss: 0.6676, C_loss: 0.1870
+INFO:main:Epoch:  10 || 200/921 || D_loss: 23.3109, G_loss: 0.5759, C_loss: 0.1533
+INFO:main:Epoch:  10 || 300/921 || D_loss: 17.9622, G_loss: 0.2997, C_loss: 0.1703
+INFO:main:Epoch:  10 || 400/921 || D_loss: 23.8377, G_loss: 0.7192, C_loss: 0.1791
+INFO:main:Epoch:  10 || 500/921 || D_loss: 14.9642, G_loss: 0.7833, C_loss: 0.1717
+INFO:main:Epoch:  10 || 600/921 || D_loss: 14.9918, G_loss: 0.4319, C_loss: 0.1611
+INFO:main:Epoch:  10 || 700/921 || D_loss: 15.7304, G_loss: 0.7943, C_loss: 0.1405
+INFO:main:Epoch:  10 || 800/921 || D_loss: 17.2220, G_loss: 0.3199, C_loss: 0.1762
+INFO:main:Epoch:  10 || 900/921 || D_loss: 16.8408, G_loss: 0.5560, C_loss: 0.1779
+INFO:main:
+Pseudo tag || Accuracy: 57980/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1063 || Accuracy: 9797/10000 (97.9700%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 11  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  11 || 100/921 || D_loss: 20.6433, G_loss: 0.3095, C_loss: 0.1385
+INFO:main:Epoch:  11 || 200/921 || D_loss: 29.2216, G_loss: 0.5204, C_loss: 0.2202
+INFO:main:Epoch:  11 || 300/921 || D_loss: 21.8862, G_loss: 0.5373, C_loss: 0.1913
+INFO:main:Epoch:  11 || 400/921 || D_loss: 15.7525, G_loss: 0.0816, C_loss: 0.1706
+INFO:main:Epoch:  11 || 500/921 || D_loss: 23.0185, G_loss: 0.5442, C_loss: 0.1823
+INFO:main:Epoch:  11 || 600/921 || D_loss: 17.0511, G_loss: 0.2955, C_loss: 0.1754
+INFO:main:Epoch:  11 || 700/921 || D_loss: 28.7113, G_loss: 0.2257, C_loss: 0.1486
+INFO:main:Epoch:  11 || 800/921 || D_loss: 15.8542, G_loss: 0.3087, C_loss: 0.1697
+INFO:main:Epoch:  11 || 900/921 || D_loss: 15.2403, G_loss: 0.3140, C_loss: 0.1573
+INFO:main:
+Pseudo tag || Accuracy: 57986/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0897 || Accuracy: 9849/10000 (98.4900%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 12  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  12 || 100/921 || D_loss: 23.6383, G_loss: 0.7919, C_loss: 0.1257
+INFO:main:Epoch:  12 || 200/921 || D_loss: 26.1829, G_loss: 0.0547, C_loss: 0.1823
+INFO:main:Epoch:  12 || 300/921 || D_loss: 28.8150, G_loss: 0.5617, C_loss: 0.1465
+INFO:main:Epoch:  12 || 400/921 || D_loss: 25.7131, G_loss: 0.0602, C_loss: 0.1474
+INFO:main:Epoch:  12 || 500/921 || D_loss: 24.2822, G_loss: 0.4974, C_loss: 0.1898
+INFO:main:Epoch:  12 || 600/921 || D_loss: 29.0080, G_loss: 0.1501, C_loss: 0.1802
+INFO:main:Epoch:  12 || 700/921 || D_loss: 16.9221, G_loss: 0.4950, C_loss: 0.1419
+INFO:main:Epoch:  12 || 800/921 || D_loss: 14.4590, G_loss: 0.6280, C_loss: 0.1521
+INFO:main:Epoch:  12 || 900/921 || D_loss: 20.4573, G_loss: 0.0574, C_loss: 0.1663
+INFO:main:
+Pseudo tag || Accuracy: 57976/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0879 || Accuracy: 9826/10000 (98.2600%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 13  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  13 || 100/921 || D_loss: 14.4331, G_loss: 0.2919, C_loss: 0.1860
+INFO:main:Epoch:  13 || 200/921 || D_loss: 21.9289, G_loss: 0.0545, C_loss: 0.1821
+INFO:main:Epoch:  13 || 300/921 || D_loss: 29.1431, G_loss: 0.5499, C_loss: 0.2035
+INFO:main:Epoch:  13 || 400/921 || D_loss: 24.7732, G_loss: 0.8141, C_loss: 0.1502
+INFO:main:Epoch:  13 || 500/921 || D_loss: 22.4609, G_loss: 0.3097, C_loss: 0.1709
+INFO:main:Epoch:  13 || 600/921 || D_loss: 22.8259, G_loss: 0.5558, C_loss: 0.1471
+INFO:main:Epoch:  13 || 700/921 || D_loss: 12.8950, G_loss: 0.0935, C_loss: 0.1396
+INFO:main:Epoch:  13 || 800/921 || D_loss: 14.9348, G_loss: 0.0654, C_loss: 0.1771
+INFO:main:Epoch:  13 || 900/921 || D_loss: 28.3000, G_loss: 0.0515, C_loss: 0.1992
+INFO:main:
+Pseudo tag || Accuracy: 57993/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0840 || Accuracy: 9859/10000 (98.5900%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 14  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  14 || 100/921 || D_loss: 27.8521, G_loss: 0.3208, C_loss: 0.1629
+INFO:main:Epoch:  14 || 200/921 || D_loss: 17.1103, G_loss: 0.3013, C_loss: 0.1384
+INFO:main:Epoch:  14 || 300/921 || D_loss: 15.6607, G_loss: 0.8304, C_loss: 0.1596
+INFO:main:Epoch:  14 || 400/921 || D_loss: 23.4336, G_loss: 0.2939, C_loss: 0.1645
+INFO:main:Epoch:  14 || 500/921 || D_loss: 18.6575, G_loss: 0.0862, C_loss: 0.1460
+INFO:main:Epoch:  14 || 600/921 || D_loss: 22.4343, G_loss: 0.3114, C_loss: 0.1487
+INFO:main:Epoch:  14 || 700/921 || D_loss: 16.8068, G_loss: 0.0606, C_loss: 0.1489
+INFO:main:Epoch:  14 || 800/921 || D_loss: 13.5422, G_loss: 0.3281, C_loss: 0.1591
+INFO:main:Epoch:  14 || 900/921 || D_loss: 24.5939, G_loss: 0.0451, C_loss: 0.1663
+INFO:main:
+Pseudo tag || Accuracy: 58006/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0740 || Accuracy: 9860/10000 (98.6000%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 15  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  15 || 100/921 || D_loss: 22.9219, G_loss: 0.0710, C_loss: 0.1407
+INFO:main:Epoch:  15 || 200/921 || D_loss: 25.0060, G_loss: 0.5873, C_loss: 0.1605
+INFO:main:Epoch:  15 || 300/921 || D_loss: 14.6276, G_loss: 0.5784, C_loss: 0.1149
+INFO:main:Epoch:  15 || 400/921 || D_loss: 23.2034, G_loss: 0.0422, C_loss: 0.1844
+INFO:main:Epoch:  15 || 500/921 || D_loss: 25.6118, G_loss: 0.7769, C_loss: 0.2214
+INFO:main:Epoch:  15 || 600/921 || D_loss: 16.3162, G_loss: 0.0539, C_loss: 0.1729
+INFO:main:Epoch:  15 || 700/921 || D_loss: 18.9091, G_loss: 0.0620, C_loss: 0.1723
+INFO:main:Epoch:  15 || 800/921 || D_loss: 24.8130, G_loss: 0.5824, C_loss: 0.1480
+INFO:main:Epoch:  15 || 900/921 || D_loss: 20.0745, G_loss: 0.0582, C_loss: 0.1490
+INFO:main:
+Pseudo tag || Accuracy: 57998/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1071 || Accuracy: 9818/10000 (98.1800%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 16  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  16 || 100/921 || D_loss: 14.9118, G_loss: 0.0687, C_loss: 0.1553
+INFO:main:Epoch:  16 || 200/921 || D_loss: 16.7373, G_loss: 0.0620, C_loss: 0.1635
+INFO:main:Epoch:  16 || 300/921 || D_loss: 21.3493, G_loss: 0.0892, C_loss: 0.1588
+INFO:main:Epoch:  16 || 400/921 || D_loss: 24.2372, G_loss: 0.3088, C_loss: 0.1807
+INFO:main:Epoch:  16 || 500/921 || D_loss: 23.8524, G_loss: 0.8240, C_loss: 0.1566
+INFO:main:Epoch:  16 || 600/921 || D_loss: 17.2630, G_loss: 0.0831, C_loss: 0.1670
+INFO:main:Epoch:  16 || 700/921 || D_loss: 19.5442, G_loss: 0.0599, C_loss: 0.1730
+INFO:main:Epoch:  16 || 800/921 || D_loss: 12.0887, G_loss: 0.0735, C_loss: 0.1436
+INFO:main:Epoch:  16 || 900/921 || D_loss: 15.8999, G_loss: 0.0861, C_loss: 0.1317
+INFO:main:
+Pseudo tag || Accuracy: 58020/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1343 || Accuracy: 9798/10000 (97.9800%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 17  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  17 || 100/921 || D_loss: 19.0757, G_loss: 0.0850, C_loss: 0.1398
+INFO:main:Epoch:  17 || 200/921 || D_loss: 15.5118, G_loss: 0.0563, C_loss: 0.1553
+INFO:main:Epoch:  17 || 300/921 || D_loss: 17.7584, G_loss: 0.3284, C_loss: 0.1655
+INFO:main:Epoch:  17 || 400/921 || D_loss: 22.9659, G_loss: 0.0554, C_loss: 0.1826
+INFO:main:Epoch:  17 || 500/921 || D_loss: 26.1007, G_loss: 0.0293, C_loss: 0.1801
+INFO:main:Epoch:  17 || 600/921 || D_loss: 13.2994, G_loss: 0.0956, C_loss: 0.1423
+INFO:main:Epoch:  17 || 700/921 || D_loss: 14.8485, G_loss: 0.1014, C_loss: 0.1414
+INFO:main:Epoch:  17 || 800/921 || D_loss: 23.9270, G_loss: 0.0855, C_loss: 0.1705
+INFO:main:Epoch:  17 || 900/921 || D_loss: 16.4050, G_loss: 0.0788, C_loss: 0.1615
+INFO:main:
+Pseudo tag || Accuracy: 57995/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1165 || Accuracy: 9788/10000 (97.8800%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 18  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  18 || 100/921 || D_loss: 20.7954, G_loss: 0.0892, C_loss: 0.1560
+INFO:main:Epoch:  18 || 200/921 || D_loss: 13.9168, G_loss: 0.0896, C_loss: 0.1919
+INFO:main:Epoch:  18 || 300/921 || D_loss: 13.2728, G_loss: 0.0697, C_loss: 0.1503
+INFO:main:Epoch:  18 || 400/921 || D_loss: 14.2127, G_loss: 0.0858, C_loss: 0.1906
+INFO:main:Epoch:  18 || 500/921 || D_loss: 22.9768, G_loss: 0.0689, C_loss: 0.1520
+INFO:main:Epoch:  18 || 600/921 || D_loss: 12.3503, G_loss: 0.0647, C_loss: 0.1823
+INFO:main:Epoch:  18 || 700/921 || D_loss: 13.4760, G_loss: 0.0669, C_loss: 0.2235
+INFO:main:Epoch:  18 || 800/921 || D_loss: 13.5926, G_loss: 0.0597, C_loss: 0.1742
+INFO:main:Epoch:  18 || 900/921 || D_loss: 27.9614, G_loss: 0.0782, C_loss: 0.1572
+INFO:main:
+Pseudo tag || Accuracy: 58014/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0745 || Accuracy: 9840/10000 (98.4000%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 19  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  19 || 100/921 || D_loss: 23.5840, G_loss: 0.0681, C_loss: 0.1427
+INFO:main:Epoch:  19 || 200/921 || D_loss: 22.0319, G_loss: 0.0635, C_loss: 0.2168
+INFO:main:Epoch:  19 || 300/921 || D_loss: 13.2641, G_loss: 0.0774, C_loss: 0.1405
+INFO:main:Epoch:  19 || 400/921 || D_loss: 19.6003, G_loss: 0.0997, C_loss: 0.1343
+INFO:main:Epoch:  19 || 500/921 || D_loss: 10.8110, G_loss: 0.0676, C_loss: 0.1271
+INFO:main:Epoch:  19 || 600/921 || D_loss: 24.2063, G_loss: 0.0741, C_loss: 0.1692
+INFO:main:Epoch:  19 || 700/921 || D_loss: 15.4663, G_loss: 0.0512, C_loss: 0.1487
+INFO:main:Epoch:  19 || 800/921 || D_loss: 18.2469, G_loss: 0.0876, C_loss: 0.1294
+INFO:main:Epoch:  19 || 900/921 || D_loss: 27.6329, G_loss: 0.0483, C_loss: 0.1671
+INFO:main:
+Pseudo tag || Accuracy: 57964/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1162 || Accuracy: 9761/10000 (97.6100%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 20  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  20 || 100/921 || D_loss: 21.8809, G_loss: 0.0579, C_loss: 0.1942
+INFO:main:Epoch:  20 || 200/921 || D_loss: 21.7040, G_loss: 0.0573, C_loss: 0.1653
+INFO:main:Epoch:  20 || 300/921 || D_loss: 26.4370, G_loss: 0.0925, C_loss: 0.1662
+INFO:main:Epoch:  20 || 400/921 || D_loss: 18.0222, G_loss: 0.0754, C_loss: 0.1553
+INFO:main:Epoch:  20 || 500/921 || D_loss: 23.2374, G_loss: 0.0810, C_loss: 0.1219
+INFO:main:Epoch:  20 || 600/921 || D_loss: 19.5032, G_loss: 0.0531, C_loss: 0.1783
+INFO:main:Epoch:  20 || 700/921 || D_loss: 18.5625, G_loss: 0.0605, C_loss: 0.1671
+INFO:main:Epoch:  20 || 800/921 || D_loss: 22.9506, G_loss: 0.0645, C_loss: 0.2797
+INFO:main:Epoch:  20 || 900/921 || D_loss: 14.4711, G_loss: 0.0917, C_loss: 0.1143
+INFO:main:
+Pseudo tag || Accuracy: 57924/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1091 || Accuracy: 9806/10000 (98.0600%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 21  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  21 || 100/921 || D_loss: 20.4000, G_loss: 0.0561, C_loss: 0.1890
+INFO:main:Epoch:  21 || 200/921 || D_loss: 16.3103, G_loss: 0.0803, C_loss: 0.1490
+INFO:main:Epoch:  21 || 300/921 || D_loss: 18.8050, G_loss: 0.0678, C_loss: 0.1816
+INFO:main:Epoch:  21 || 400/921 || D_loss: 21.9710, G_loss: 0.0784, C_loss: 0.1731
+INFO:main:Epoch:  21 || 500/921 || D_loss: 18.1796, G_loss: 0.0791, C_loss: 0.1284
+INFO:main:Epoch:  21 || 600/921 || D_loss: 22.8910, G_loss: 0.0823, C_loss: 0.1793
+INFO:main:Epoch:  21 || 700/921 || D_loss: 14.7585, G_loss: 0.0734, C_loss: 0.1136
+INFO:main:Epoch:  21 || 800/921 || D_loss: 15.9940, G_loss: 0.0721, C_loss: 0.1707
+INFO:main:Epoch:  21 || 900/921 || D_loss: 14.7381, G_loss: 0.0735, C_loss: 0.1222
+INFO:main:
+Pseudo tag || Accuracy: 57985/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1261 || Accuracy: 9809/10000 (98.0900%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 22  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  22 || 100/921 || D_loss: 21.9293, G_loss: 0.0785, C_loss: 0.1615
+INFO:main:Epoch:  22 || 200/921 || D_loss: 28.1800, G_loss: 0.0692, C_loss: 0.1142
+INFO:main:Epoch:  22 || 300/921 || D_loss: 28.8279, G_loss: 0.0871, C_loss: 0.1227
+INFO:main:Epoch:  22 || 400/921 || D_loss: 21.6274, G_loss: 0.0775, C_loss: 0.1719
+INFO:main:Epoch:  22 || 500/921 || D_loss: 17.5690, G_loss: 0.0846, C_loss: 0.1366
+INFO:main:Epoch:  22 || 600/921 || D_loss: 22.2048, G_loss: 0.0764, C_loss: 0.1770
+INFO:main:Epoch:  22 || 700/921 || D_loss: 17.8192, G_loss: 0.0732, C_loss: 0.1617
+INFO:main:Epoch:  22 || 800/921 || D_loss: 15.6467, G_loss: 0.0700, C_loss: 0.1556
+INFO:main:Epoch:  22 || 900/921 || D_loss: 19.6693, G_loss: 0.0739, C_loss: 0.1595
+INFO:main:
+Pseudo tag || Accuracy: 57978/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1474 || Accuracy: 9737/10000 (97.3700%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 23  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  23 || 100/921 || D_loss: 24.0400, G_loss: 0.0517, C_loss: 0.1516
+INFO:main:Epoch:  23 || 200/921 || D_loss: 21.8682, G_loss: 0.0776, C_loss: 0.1541
+INFO:main:Epoch:  23 || 300/921 || D_loss: 20.9277, G_loss: 0.0861, C_loss: 0.1642
+INFO:main:Epoch:  23 || 400/921 || D_loss: 12.8025, G_loss: 0.0624, C_loss: 0.1787
+INFO:main:Epoch:  23 || 500/921 || D_loss: 26.5073, G_loss: 0.0970, C_loss: 0.1588
+INFO:main:Epoch:  23 || 600/921 || D_loss: 26.5262, G_loss: 0.0450, C_loss: 0.1596
+INFO:main:Epoch:  23 || 700/921 || D_loss: 24.9657, G_loss: 0.0800, C_loss: 0.1477
+INFO:main:Epoch:  23 || 800/921 || D_loss: 22.5056, G_loss: 0.0856, C_loss: 0.2213
+INFO:main:Epoch:  23 || 900/921 || D_loss: 19.6159, G_loss: 0.0696, C_loss: 0.1599
+INFO:main:
+Pseudo tag || Accuracy: 57971/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1027 || Accuracy: 9834/10000 (98.3400%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 24  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  24 || 100/921 || D_loss: 15.2772, G_loss: 0.0809, C_loss: 0.1471
+INFO:main:Epoch:  24 || 200/921 || D_loss: 11.4937, G_loss: 0.0921, C_loss: 0.1359
+INFO:main:Epoch:  24 || 300/921 || D_loss: 20.8879, G_loss: 0.0665, C_loss: 0.1081
+INFO:main:Epoch:  24 || 400/921 || D_loss: 20.3514, G_loss: 0.0696, C_loss: 0.1463
+INFO:main:Epoch:  24 || 500/921 || D_loss: 19.3068, G_loss: 0.0728, C_loss: 0.1744
+INFO:main:Epoch:  24 || 600/921 || D_loss: 23.9631, G_loss: 0.0913, C_loss: 0.1243
+INFO:main:Epoch:  24 || 700/921 || D_loss: 18.3500, G_loss: 0.0523, C_loss: 0.1488
+INFO:main:Epoch:  24 || 800/921 || D_loss: 18.0400, G_loss: 0.0815, C_loss: 0.1356
+INFO:main:Epoch:  24 || 900/921 || D_loss: 23.0308, G_loss: 0.0826, C_loss: 0.1810
+INFO:main:
+Pseudo tag || Accuracy: 57981/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1162 || Accuracy: 9812/10000 (98.1200%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 25  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  25 || 100/921 || D_loss: 17.0767, G_loss: 0.0781, C_loss: 0.1405
+INFO:main:Epoch:  25 || 200/921 || D_loss: 20.5337, G_loss: 0.0721, C_loss: 0.1235
+INFO:main:Epoch:  25 || 300/921 || D_loss: 16.7432, G_loss: 0.0867, C_loss: 0.2245
+INFO:main:Epoch:  25 || 400/921 || D_loss: 20.1939, G_loss: 0.0777, C_loss: 0.1504
+INFO:main:Epoch:  25 || 500/921 || D_loss: 13.6556, G_loss: 0.0934, C_loss: 0.1095
+INFO:main:Epoch:  25 || 600/921 || D_loss: 29.5797, G_loss: 0.0875, C_loss: 0.1378
+INFO:main:Epoch:  25 || 700/921 || D_loss: 20.6218, G_loss: 0.0797, C_loss: 0.1529
+INFO:main:Epoch:  25 || 800/921 || D_loss: 14.8889, G_loss: 0.0710, C_loss: 0.1222
+INFO:main:Epoch:  25 || 900/921 || D_loss: 22.3546, G_loss: 0.0632, C_loss: 0.1615
+INFO:main:
+Pseudo tag || Accuracy: 57932/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.2153 || Accuracy: 9608/10000 (96.0800%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 26  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  26 || 100/921 || D_loss: 18.3166, G_loss: 0.0574, C_loss: 0.1417
+INFO:main:Epoch:  26 || 200/921 || D_loss: 28.9154, G_loss: 0.0716, C_loss: 0.1988
+INFO:main:Epoch:  26 || 300/921 || D_loss: 17.9870, G_loss: 0.0766, C_loss: 0.1372
+INFO:main:Epoch:  26 || 400/921 || D_loss: 19.5068, G_loss: 0.0624, C_loss: 0.2041
+INFO:main:Epoch:  26 || 500/921 || D_loss: 17.6580, G_loss: 0.0913, C_loss: 0.1123
+INFO:main:Epoch:  26 || 600/921 || D_loss: 14.5061, G_loss: 0.0656, C_loss: 0.1125
+INFO:main:Epoch:  26 || 700/921 || D_loss: 11.3895, G_loss: 0.0786, C_loss: 0.1215
+INFO:main:Epoch:  26 || 800/921 || D_loss: 27.3410, G_loss: 0.0860, C_loss: 0.1529
+INFO:main:Epoch:  26 || 900/921 || D_loss: 14.5450, G_loss: 0.0708, C_loss: 0.1223
+INFO:main:
+Pseudo tag || Accuracy: 57977/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1414 || Accuracy: 9726/10000 (97.2600%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 27  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  27 || 100/921 || D_loss: 14.8717, G_loss: 0.0398, C_loss: 0.2355
+INFO:main:Epoch:  27 || 200/921 || D_loss: 18.2582, G_loss: 0.0838, C_loss: 0.1372
+INFO:main:Epoch:  27 || 300/921 || D_loss: 17.6207, G_loss: 0.0858, C_loss: 0.1174
+INFO:main:Epoch:  27 || 400/921 || D_loss: 17.3226, G_loss: 0.0732, C_loss: 0.1661
+INFO:main:Epoch:  27 || 500/921 || D_loss: 22.9656, G_loss: 0.1123, C_loss: 0.1750
+INFO:main:Epoch:  27 || 600/921 || D_loss: 20.1055, G_loss: 0.1037, C_loss: 0.1291
+INFO:main:Epoch:  27 || 700/921 || D_loss: 25.4631, G_loss: 0.0744, C_loss: 0.1932
+INFO:main:Epoch:  27 || 800/921 || D_loss: 18.2745, G_loss: 0.0409, C_loss: 0.1517
+INFO:main:Epoch:  27 || 900/921 || D_loss: 19.8420, G_loss: 0.1114, C_loss: 0.0988
+INFO:main:
+Pseudo tag || Accuracy: 58002/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1482 || Accuracy: 9759/10000 (97.5900%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 28  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  28 || 100/921 || D_loss: 17.6778, G_loss: 0.1046, C_loss: 0.1418
+INFO:main:Epoch:  28 || 200/921 || D_loss: 17.9808, G_loss: 0.0574, C_loss: 0.1531
+INFO:main:Epoch:  28 || 300/921 || D_loss: 16.3732, G_loss: 0.1019, C_loss: 0.1097
+INFO:main:Epoch:  28 || 400/921 || D_loss: 12.9258, G_loss: 0.0911, C_loss: 0.1252
+INFO:main:Epoch:  28 || 500/921 || D_loss: 23.2338, G_loss: 0.0660, C_loss: 0.1225
+INFO:main:Epoch:  28 || 600/921 || D_loss: 15.4658, G_loss: 0.0670, C_loss: 0.1399
+INFO:main:Epoch:  28 || 700/921 || D_loss: 21.3923, G_loss: 0.0897, C_loss: 0.1223
+INFO:main:Epoch:  28 || 800/921 || D_loss: 27.3123, G_loss: 0.0549, C_loss: 0.1594
+INFO:main:Epoch:  28 || 900/921 || D_loss: 17.0046, G_loss: 0.0540, C_loss: 0.1281
+INFO:main:
+Pseudo tag || Accuracy: 57998/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1317 || Accuracy: 9770/10000 (97.7000%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 29  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  29 || 100/921 || D_loss: 19.2290, G_loss: 0.0704, C_loss: 0.1379
+INFO:main:Epoch:  29 || 200/921 || D_loss: 24.1690, G_loss: 0.0913, C_loss: 0.1212
+INFO:main:Epoch:  29 || 300/921 || D_loss: 17.2753, G_loss: 0.1146, C_loss: 0.1111
+INFO:main:Epoch:  29 || 400/921 || D_loss: 12.6043, G_loss: 0.0648, C_loss: 0.1345
+INFO:main:Epoch:  29 || 500/921 || D_loss: 25.0729, G_loss: 0.0964, C_loss: 0.0962
+INFO:main:Epoch:  29 || 600/921 || D_loss: 23.5473, G_loss: 0.0617, C_loss: 0.1339
+INFO:main:Epoch:  29 || 700/921 || D_loss: 21.9560, G_loss: 0.0792, C_loss: 0.1103
+INFO:main:Epoch:  29 || 800/921 || D_loss: 17.9121, G_loss: 0.0891, C_loss: 0.1315
+INFO:main:Epoch:  29 || 900/921 || D_loss: 18.5399, G_loss: 0.0595, C_loss: 0.1472
+INFO:main:
+Pseudo tag || Accuracy: 58002/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1821 || Accuracy: 9650/10000 (96.5000%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 30  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  30 || 100/921 || D_loss: 23.8673, G_loss: 0.0723, C_loss: 0.1050
+INFO:main:Epoch:  30 || 200/921 || D_loss: 15.7298, G_loss: 0.0438, C_loss: 0.1966
+INFO:main:Epoch:  30 || 300/921 || D_loss: 15.7558, G_loss: 0.0785, C_loss: 0.1442
+INFO:main:Epoch:  30 || 400/921 || D_loss: 17.5501, G_loss: 0.0688, C_loss: 0.1387
+INFO:main:Epoch:  30 || 500/921 || D_loss: 16.9224, G_loss: 0.0872, C_loss: 0.1015
+INFO:main:Epoch:  30 || 600/921 || D_loss: 13.8153, G_loss: 0.0559, C_loss: 0.1251
+INFO:main:Epoch:  30 || 700/921 || D_loss: 16.3560, G_loss: 0.0883, C_loss: 0.1587
+INFO:main:Epoch:  30 || 800/921 || D_loss: 17.6309, G_loss: 0.0487, C_loss: 0.1542
+INFO:main:Epoch:  30 || 900/921 || D_loss: 20.0702, G_loss: 0.0753, C_loss: 0.1442
+INFO:main:
+Pseudo tag || Accuracy: 58003/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1281 || Accuracy: 9773/10000 (97.7300%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 31  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  31 || 100/921 || D_loss: 15.4027, G_loss: 0.0672, C_loss: 0.1163
+INFO:main:Epoch:  31 || 200/921 || D_loss: 23.0271, G_loss: 0.1042, C_loss: 0.1289
+INFO:main:Epoch:  31 || 300/921 || D_loss: 14.1370, G_loss: 0.0702, C_loss: 0.1486
+INFO:main:Epoch:  31 || 400/921 || D_loss: 17.3372, G_loss: 0.1041, C_loss: 0.1151
+INFO:main:Epoch:  31 || 500/921 || D_loss: 26.3442, G_loss: 0.1146, C_loss: 0.1146
+INFO:main:Epoch:  31 || 600/921 || D_loss: 16.6353, G_loss: 0.1172, C_loss: 0.1025
+INFO:main:Epoch:  31 || 700/921 || D_loss: 13.8358, G_loss: 0.0806, C_loss: 0.1377
+INFO:main:Epoch:  31 || 800/921 || D_loss: 26.9928, G_loss: 0.0733, C_loss: 0.1242
+INFO:main:Epoch:  31 || 900/921 || D_loss: 17.6410, G_loss: 0.0688, C_loss: 0.1368
+INFO:main:
+Pseudo tag || Accuracy: 58008/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1263 || Accuracy: 9770/10000 (97.7000%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 32  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  32 || 100/921 || D_loss: 15.4614, G_loss: 0.0792, C_loss: 0.1412
+INFO:main:Epoch:  32 || 200/921 || D_loss: 18.2559, G_loss: 0.0770, C_loss: 0.1058
+INFO:main:Epoch:  32 || 300/921 || D_loss: 24.8246, G_loss: 0.0827, C_loss: 0.1414
+INFO:main:Epoch:  32 || 400/921 || D_loss: 18.2299, G_loss: 0.0956, C_loss: 0.1058
+INFO:main:Epoch:  32 || 500/921 || D_loss: 15.1461, G_loss: 0.0954, C_loss: 0.1299
+INFO:main:Epoch:  32 || 600/921 || D_loss: 17.6267, G_loss: 0.1096, C_loss: 0.1034
+INFO:main:Epoch:  32 || 700/921 || D_loss: 23.6042, G_loss: 0.1107, C_loss: 0.1312
+INFO:main:Epoch:  32 || 800/921 || D_loss: 13.6047, G_loss: 0.0570, C_loss: 0.1318
+INFO:main:Epoch:  32 || 900/921 || D_loss: 16.0131, G_loss: 0.0986, C_loss: 0.1348
+INFO:main:
+Pseudo tag || Accuracy: 58017/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1465 || Accuracy: 9732/10000 (97.3200%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 33  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  33 || 100/921 || D_loss: 14.8029, G_loss: 0.0863, C_loss: 0.1163
+INFO:main:Epoch:  33 || 200/921 || D_loss: 15.8136, G_loss: 0.0930, C_loss: 0.1051
+INFO:main:Epoch:  33 || 300/921 || D_loss: 19.8168, G_loss: 0.1003, C_loss: 0.1566
+INFO:main:Epoch:  33 || 400/921 || D_loss: 17.9648, G_loss: 0.0855, C_loss: 0.1148
+INFO:main:Epoch:  33 || 500/921 || D_loss: 19.5041, G_loss: 0.1260, C_loss: 0.1217
+INFO:main:Epoch:  33 || 600/921 || D_loss: 14.8235, G_loss: 0.1031, C_loss: 0.0810
+INFO:main:Epoch:  33 || 700/921 || D_loss: 13.8999, G_loss: 0.0939, C_loss: 0.1307
+INFO:main:Epoch:  33 || 800/921 || D_loss: 19.4704, G_loss: 0.0748, C_loss: 0.1299
+INFO:main:Epoch:  33 || 900/921 || D_loss: 27.3541, G_loss: 0.0939, C_loss: 0.1748
+INFO:main:
+Pseudo tag || Accuracy: 58059/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1131 || Accuracy: 9811/10000 (98.1100%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 34  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  34 || 100/921 || D_loss: 14.4879, G_loss: 0.0811, C_loss: 0.1118
+INFO:main:Epoch:  34 || 200/921 || D_loss: 23.5810, G_loss: 0.0821, C_loss: 0.1103
+INFO:main:Epoch:  34 || 300/921 || D_loss: 20.3931, G_loss: 0.1036, C_loss: 0.1277
+INFO:main:Epoch:  34 || 400/921 || D_loss: 19.1569, G_loss: 0.0975, C_loss: 0.0948
+INFO:main:Epoch:  34 || 500/921 || D_loss: 21.9699, G_loss: 0.1038, C_loss: 0.1292
+INFO:main:Epoch:  34 || 600/921 || D_loss: 19.4977, G_loss: 0.0915, C_loss: 0.1169
+INFO:main:Epoch:  34 || 700/921 || D_loss: 22.9060, G_loss: 0.0944, C_loss: 0.1229
+INFO:main:Epoch:  34 || 800/921 || D_loss: 20.7184, G_loss: 0.0961, C_loss: 0.1053
+INFO:main:Epoch:  34 || 900/921 || D_loss: 16.6462, G_loss: 0.1020, C_loss: 0.1374
+INFO:main:
+Pseudo tag || Accuracy: 58046/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0906 || Accuracy: 9834/10000 (98.3400%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 35  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  35 || 100/921 || D_loss: 15.1902, G_loss: 0.1208, C_loss: 0.0802
+INFO:main:Epoch:  35 || 200/921 || D_loss: 22.2649, G_loss: 0.0751, C_loss: 0.1172
+INFO:main:Epoch:  35 || 300/921 || D_loss: 16.9861, G_loss: 0.1084, C_loss: 0.0962
+INFO:main:Epoch:  35 || 400/921 || D_loss: 21.0194, G_loss: 0.0758, C_loss: 0.1336
+INFO:main:Epoch:  35 || 500/921 || D_loss: 18.2014, G_loss: 0.0743, C_loss: 0.1005
+INFO:main:Epoch:  35 || 600/921 || D_loss: 12.5829, G_loss: 0.0885, C_loss: 0.1362
+INFO:main:Epoch:  35 || 700/921 || D_loss: 21.0328, G_loss: 0.0862, C_loss: 0.1006
+INFO:main:Epoch:  35 || 800/921 || D_loss: 25.0589, G_loss: 0.1064, C_loss: 0.1822
+INFO:main:Epoch:  35 || 900/921 || D_loss: 16.9691, G_loss: 0.0846, C_loss: 0.0996
+INFO:main:
+Pseudo tag || Accuracy: 58049/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1394 || Accuracy: 9754/10000 (97.5400%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 36  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  36 || 100/921 || D_loss: 20.3807, G_loss: 0.0978, C_loss: 0.0907
+INFO:main:Epoch:  36 || 200/921 || D_loss: 23.9190, G_loss: 0.0877, C_loss: 0.1078
+INFO:main:Epoch:  36 || 300/921 || D_loss: 15.6947, G_loss: 0.0923, C_loss: 0.1267
+INFO:main:Epoch:  36 || 400/921 || D_loss: 24.8383, G_loss: 0.0729, C_loss: 0.1302
+INFO:main:Epoch:  36 || 500/921 || D_loss: 16.6420, G_loss: 0.1142, C_loss: 0.1084
+INFO:main:Epoch:  36 || 600/921 || D_loss: 11.9411, G_loss: 0.1119, C_loss: 0.0901
+INFO:main:Epoch:  36 || 700/921 || D_loss: 25.0851, G_loss: 0.0921, C_loss: 0.1120
+INFO:main:Epoch:  36 || 800/921 || D_loss: 15.6886, G_loss: 0.1060, C_loss: 0.0600
+INFO:main:Epoch:  36 || 900/921 || D_loss: 18.2387, G_loss: 0.0955, C_loss: 0.0964
+INFO:main:
+Pseudo tag || Accuracy: 58067/58944 (99%)
+
+INFO:main:
+Test set || Test loss: 0.1446 || Accuracy: 9736/10000 (97.3600%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 37  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  37 || 100/921 || D_loss: 17.2654, G_loss: 0.1259, C_loss: 0.0702
+INFO:main:Epoch:  37 || 200/921 || D_loss: 12.9038, G_loss: 0.1301, C_loss: 0.0758
+INFO:main:Epoch:  37 || 300/921 || D_loss: 21.0530, G_loss: 0.1035, C_loss: 0.1041
+INFO:main:Epoch:  37 || 400/921 || D_loss: 21.9757, G_loss: 0.0917, C_loss: 0.1136
+INFO:main:Epoch:  37 || 500/921 || D_loss: 22.5757, G_loss: 0.0939, C_loss: 0.1142
+INFO:main:Epoch:  37 || 600/921 || D_loss: 29.1253, G_loss: 0.0974, C_loss: 0.0873
+INFO:main:Epoch:  37 || 700/921 || D_loss: 26.6841, G_loss: 0.0973, C_loss: 0.0796
+INFO:main:Epoch:  37 || 800/921 || D_loss: 25.7152, G_loss: 0.0972, C_loss: 0.0881
+INFO:main:Epoch:  37 || 900/921 || D_loss: 27.2792, G_loss: 0.1111, C_loss: 0.0921
+INFO:main:
+Pseudo tag || Accuracy: 58041/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.0843 || Accuracy: 9835/10000 (98.3500%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 38  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  38 || 100/921 || D_loss: 26.6609, G_loss: 0.1046, C_loss: 0.0914
+INFO:main:Epoch:  38 || 200/921 || D_loss: 20.4087, G_loss: 0.1110, C_loss: 0.1174
+INFO:main:Epoch:  38 || 300/921 || D_loss: 20.0778, G_loss: 0.1027, C_loss: 0.0996
+INFO:main:Epoch:  38 || 400/921 || D_loss: 10.3868, G_loss: 0.1135, C_loss: 0.0917
+INFO:main:Epoch:  38 || 500/921 || D_loss: 16.2862, G_loss: 0.0954, C_loss: 0.1225
+INFO:main:Epoch:  38 || 600/921 || D_loss: 29.7908, G_loss: 0.1103, C_loss: 0.0743
+INFO:main:Epoch:  38 || 700/921 || D_loss: 11.7150, G_loss: 0.1285, C_loss: 0.1121
+INFO:main:Epoch:  38 || 800/921 || D_loss: 19.2288, G_loss: 0.0938, C_loss: 0.0994
+INFO:main:Epoch:  38 || 900/921 || D_loss: 11.6336, G_loss: 0.1080, C_loss: 0.0804
+INFO:main:
+Pseudo tag || Accuracy: 58069/58944 (99%)
+
+INFO:main:
+Test set || Test loss: 0.1168 || Accuracy: 9789/10000 (97.8900%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 39  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  39 || 100/921 || D_loss: 12.6518, G_loss: 0.1040, C_loss: 0.0681
+INFO:main:Epoch:  39 || 200/921 || D_loss: 18.4970, G_loss: 0.1081, C_loss: 0.0696
+INFO:main:Epoch:  39 || 300/921 || D_loss: 16.3420, G_loss: 0.0971, C_loss: 0.0916
+INFO:main:Epoch:  39 || 400/921 || D_loss: 14.4508, G_loss: 0.1079, C_loss: 0.0875
+INFO:main:Epoch:  39 || 500/921 || D_loss: 17.5699, G_loss: 0.1143, C_loss: 0.1158
+INFO:main:Epoch:  39 || 600/921 || D_loss: 26.9543, G_loss: 0.1200, C_loss: 0.0913
+INFO:main:Epoch:  39 || 700/921 || D_loss: 14.7894, G_loss: 0.1202, C_loss: 0.0900
+INFO:main:Epoch:  39 || 800/921 || D_loss: 20.0873, G_loss: 0.1057, C_loss: 0.0781
+INFO:main:Epoch:  39 || 900/921 || D_loss: 27.5706, G_loss: 0.0953, C_loss: 0.1082
+INFO:main:
+Pseudo tag || Accuracy: 58060/58944 (99%)
+
+INFO:main:
+Test set || Test loss: 0.1475 || Accuracy: 9738/10000 (97.3800%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Epoch: 40  || lrC: 0.1, lrD: 0.0002, lrG: 0.0002
+INFO:main:Epoch:  40 || 100/921 || D_loss: 16.6137, G_loss: 0.1131, C_loss: 0.0905
+INFO:main:Epoch:  40 || 200/921 || D_loss: 28.2703, G_loss: 0.1195, C_loss: 0.0661
+INFO:main:Epoch:  40 || 300/921 || D_loss: 17.2209, G_loss: 0.0708, C_loss: 0.1148
+INFO:main:Epoch:  40 || 400/921 || D_loss: 15.1585, G_loss: 0.0874, C_loss: 0.0933
+INFO:main:Epoch:  40 || 500/921 || D_loss: 27.9014, G_loss: 0.1169, C_loss: 0.0641
+INFO:main:Epoch:  40 || 600/921 || D_loss: 12.5881, G_loss: 0.0755, C_loss: 0.0912
+INFO:main:Epoch:  40 || 700/921 || D_loss: 23.5195, G_loss: 0.1134, C_loss: 0.0747
+INFO:main:Epoch:  40 || 800/921 || D_loss: 13.8379, G_loss: 0.1073, C_loss: 0.1348
+INFO:main:Epoch:  40 || 900/921 || D_loss: 21.0148, G_loss: 0.1250, C_loss: 0.0741
+INFO:main:
+Pseudo tag || Accuracy: 58035/58944 (98%)
+
+INFO:main:
+Test set || Test loss: 0.1094 || Accuracy: 9792/10000 (97.9200%) || Best accuraccy: 0.9884
+
+WARNING:imageio:Lossy conversion from float64 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
+INFO:main:Average one epoch time: 123.83, total 40 epochs time: 4954.45

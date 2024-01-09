@@ -1,1 +1,6 @@
-python train.py --labels data-local/labels/cifar10/4000_balanced_labels/00.txt --epochs 200 --mode rmcos --batch-size 256 --labeled-batch-size 62 --generated-batch-size 64 --alpha 0.9
+python3 train.py --labels data-local/labels/cifar10/1000_balanced_labels/00.txt --epochs 300 --lr-rampdown-epochs 500 --mode rmcos --m 0  --alpha 0.9  --batch-size 256 --generated-batch-size 256 --labeled-batch-size 64
+python3 train.py --labels data-local/labels/cifar10/1000_balanced_labels/01.txt --epochs 300 --lr-rampdown-epochs 500 --mode rmcos --m 0  --alpha 0.9  --batch-size 256 --generated-batch-size 256 --labeled-batch-size 64
+python3 train.py --labels data-local/labels/cifar10/1000_balanced_labels/02.txt --epochs 300 --lr-rampdown-epochs 500 --mode rmcos --m 0  --alpha 0.9  --batch-size 256 --generated-batch-size 256 --labeled-batch-size 64
+python3 train.py --labels data-local/labels/cifar10/1000_balanced_labels/03.txt --epochs 300 --lr-rampdown-epochs 500 --mode rmcos --m 0  --alpha 0.9  --batch-size 256 --generated-batch-size 256 --labeled-batch-size 64
+python3 train.py --labels data-local/labels/cifar10/1000_balanced_labels/04.txt --epochs 300 --lr-rampdown-epochs 500 --mode rmcos --m 0  --alpha 0.9  --batch-size 256 --generated-batch-size 256 --labeled-batch-size 64
+#python3 train.py --labels data-local/labels/cifar10/4000_balanced_labels/00.txt --epochs 300 --mode rmcos --batch-size 256 --m 0.1 --labeled-batch-size 256 --generated-batch-size 64 --alpha 0.9

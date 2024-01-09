@@ -1,0 +1,10 @@
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 1000 --labels labels/1000/0.txt
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 1000 --labels labels/1000/1.txt
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 1000 --labels labels/1000/2.txt
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 1000 --labels labels/1000/3.txt
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 1000 --labels labels/1000/4.txt
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 3000 --labels labels/3000/0.txt
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 3000 --labels labels/3000/1.txt
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 3000 --labels labels/3000/2.txt
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 3000 --labels labels/3000/3.txt
+python3 train.py --num_epoch 40 --mode margingan --alpha 0.9 --num_labels 3000 --labels labels/3000/4.txt
